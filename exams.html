@@ -1,0 +1,905 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="fav_icon2.ico">
+    <title>cbt.petoaschools.org</title>
+    <style>
+        body {
+             background-color: purple;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+           /* text-align: center;*/
+           text-align: center;
+        }
+        #logout-container {
+            text-align: right;
+        }
+           #datetime {
+            color: gold; /* Set text color to red */
+            font-size: 18px;
+            font-weight: bold;
+        }
+         /* Background overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        /* Modal Background */
+        .custom-modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.6);
+        }
+
+        /* Modal Box */
+        .custom-modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 0;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            animation: fadeIn 0.4s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header */
+        .custom-modal-header {
+            background-color: #28a745;
+            padding: 15px;
+            color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        /* Close button */
+        .custom-close {
+            float: right;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Body */
+        .custom-modal-body {
+            padding: 20px;
+        }
+
+        /* Footer */
+        .custom-modal-footer {
+            padding: 15px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            background-color: #f1f1f1;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Buttons */
+        .btn-cancel, .btn-submit {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn-cancel {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        .btn-submit {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+
+        /* Custom alert box */
+        .custom-alert {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            width: 300px;
+        }
+
+        /* Alert title */
+        .custom-alert h2 {
+            margin: 0;
+            font-size: 18px;
+            color: black;
+        }
+
+        /* Buttons */
+        .alert-buttons {
+            margin-top: 15px;
+        }
+
+        .alert-buttons button {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        /* OK Button */
+        .ok-btn {
+            background: green;
+            color: white;
+        }
+
+        /* Cancel Button */
+        .cancel-btn {
+            background: red;
+            color: white;
+        }
+        #logout {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 5px;
+        }
+
+        #header {
+            padding: 20px;
+        }
+
+        #logo img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #student-info {
+            margin-top: 20px;
+        }
+
+        #student-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+       
+        #welcome-message {
+            color: red; /* Make text red */
+            font-size: 24px; /* Increase size for emphasis */
+            font-weight: bold; /* Make it bold */
+        }
+            /* Container for answered/unanswered count */
+        /* Answered/Unanswered Count Box */
+       /* Answered/Unanswered Count Box */
+        #userAnswerCount {
+            position: absolute;
+            top: 20px;
+            left: 20px; /* Moved to the left */
+            background-color: rgba(0, 0, 0, 0.6); /* Transparent black */
+            padding: 15px;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            width: 200px;
+        }
+
+        /* Answered/Unanswered Labels */
+        #answeredLabel {
+            color: lime;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #unansweredLabel {
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Positioning the userAnswerCount beside the question */
+        .question-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+    #question-container {
+        width: 70%; /* Takes up 70% of the screen */
+    }
+
+        #question-container {
+            margin: 20px auto;
+            width: 70%;
+            padding: 20px;
+            background-color: fuchsia;
+            border-radius: 8px;
+            text-align: left;
+        }
+        #questionTextContainer {
+            /*text-align: left !important;*/
+        }
+
+
+        #questionText {
+            width: 98%;
+            height: 150px;
+            resize: none;
+            padding: 10px;
+            font-size: 18px;
+            color: red;
+            background-color: lime;
+            border-radius: 5px;
+            border: none;
+            text-align: left;
+        }
+        
+     .question-text {
+          max-height: 300px; /* or any desired height */
+          max-width: 100%;   /* or a fixed width like 600px */
+          overflow-y: auto;  /* vertical scroll */
+          overflow-x: auto;  /* horizontal scroll if needed */
+          padding: 10px;
+          border: 1px solid #ccc; /* optional for visibility */
+          white-space: pre-wrap;  /* preserve line breaks and spacing */
+    }
+         
+         .scroll-container {
+        max-height: 300px;
+        max-width: 100%;
+        overflow-y: auto;
+        overflow-x: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+
+      .question-text {
+        white-space: pre-wrap;
+      }
+             .questionButtons {
+          margin: 15px 0;
+          text-align: center;
+        }
+        .question-btn {
+          margin: 3px;
+          padding: 8px 12px;
+          border-radius: 6px;
+          border: 1px solid #444;
+          cursor: pointer;
+          font-weight: bold;
+          background-color: #eee;
+        }
+        .question-btn:hover {
+          background-color: #d0f0d0;
+        }
+        .option {
+            font-weight: bold;
+            color: lime;
+            margin: 10px 0;
+            text-align: lefts;
+        }
+
+        #logout {
+            background-color: red;
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #optionz {
+            list-style-type: none;
+            padding: 0;
+            margin-left: 0;
+            color: lime;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .option-group {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .option-group input {
+        margin-right: 10px;
+        transform: scale(1.5); /* Make the radio buttons bigger */
+       }
+
+        .option-group label {
+        font-weight: bold; /* Make the labels bold */
+        font-size: 18px; /* Adjust font size if needed */
+       }
+
+        #optionz li {
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        #optionz li input {
+            margin-right: 10px;
+        }
+        
+        #nav-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #nav-buttons button {
+            margin: 0 10px; /* Add spacing between buttons */
+        }
+
+        .btn-warning, .btn-success ,.btn-cool{
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #answerFeedback {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            width: 250px;
+        }
+        .correct {
+            color: lime;
+            border: 2px solid lime;
+        }
+        .incorrect {
+            color: red;
+            border: 2px solid red;
+        }
+
+        .btn-warning {
+            background-color: orange;
+            color: white;
+        }
+
+        .btn-success {
+            background-color: green;
+            color: white;
+        }
+
+        .btn-cool {
+            background-color: lime;
+            color: red;
+        }
+
+        .question-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+         #timer {
+        font-size: 24px;  /* Larger font for visibility */
+        font-weight: bold; /* Make it bold */
+        color: lime; /* Lime color */
+        text-align: center; /* Center it */
+        margin-bottom: 10px; /* Space below before question-container */
+    }
+    /* Container to hold the moving text */
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            background: fuchsia;
+            padding: 10px 0;
+        }
+        .question-label {
+            display: block;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color:yellow;
+        }
+
+
+        /* Moving text animation */
+        .marquee-text {
+            display: inline-block;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            animation: marquee 10s linear infinite;
+        }
+             .windows-activate {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-color);
+            font-size: 14px;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+       
+
+        /* Keyframes for moving text */
+        @keyframes marquee {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+    <script>
+    // Disable back navigation
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+        history.go(1);
+    };
+
+     let backClickCount = 0;
+            let allowBack = false;
+
+            history.pushState(null, null, location.href);
+
+            window.onpopstate = function () {
+                if (!allowBack) {
+                    backClickCount++;
+
+                    if (backClickCount >= 50) {
+                        allowBack = true;
+                        alert("You have tried 50 times. Going back now...");
+                        history.back();
+                        return;
+                    }
+
+                    showBackModal();
+                }
+            };
+
+            function showBackModal() {
+                document.getElementById("backModalOverlay").style.display = "flex";
+                document.getElementById("passwordContainer").style.display = "none";
+                document.getElementById("backPassword").value = "";
+               
+                document.getElementById("modalButtons").innerHTML = `
+                    <button onclick="handleYes()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: limegreen; color: white; font-size: 16px; cursor: pointer;">Yes</button>
+                    <button onclick="closeBackModal()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: crimson; color: white; font-size: 16px; cursor: pointer;">No</button>
+                `;
+            }
+
+            function closeBackModal() {
+                document.getElementById("backModalOverlay").style.display = "none";
+                history.pushState(null, null, location.href);
+            }
+
+            function handleYes() {
+                document.getElementById("passwordContainer").style.display = "block";
+                document.getElementById("modalButtons").innerHTML = `
+                    <button onclick="checkPassword()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: limegreen; color: white; font-size: 16px; cursor: pointer;">Submit</button>
+                    <button onclick="closeBackModal()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: crimson; color: white; font-size: 16px; cursor: pointer;">Cancel</button>
+                `;
+            }
+
+            function checkPassword() {
+                const correctPassword = "admin123";
+                const enteredPassword = document.getElementById("backPassword").value;
+
+                if (enteredPassword === correctPassword) {
+                    allowBack = true;
+                    document.getElementById("backModalOverlay").style.display = "none";
+                    history.back();
+                } else {
+                    alert("Incorrect password. Staying on this page.");
+                    closeBackModal();
+                }
+            }
+</script>
+</head>
+         <div id="backModalOverlay" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.8); color: #fff; font-family: Arial, sans-serif; justify-content: center; align-items: center; flex-direction: column;">
+                <div id="backModal" style="background: #222; padding: 30px; border-radius: 10px; text-align: center; width: 90%; max-width: 400px;">
+                    <p style="font-size: 18px; margin: 0 0 10px;">Do you really want to go back?</p>
+
+                    <div id="passwordContainer" style="display: none;">
+                        <p style="margin-top: 10px;">Enter password to go back:</p>
+                        <input type="password" id="backPassword" placeholder="Enter password"
+                            style="padding: 10px; width: 80%; margin-top: 10px; border-radius: 5px; border: none; font-size: 16px;">
+                    </div>
+
+                    <div id="modalButtons" style="margin-top: 20px;">
+                        <button onclick="handleYes()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: limegreen; color: white; font-size: 16px; cursor: pointer;">Yes</button>
+                        <button onclick="closeBackModal()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: crimson; color: white; font-size: 16px; cursor: pointer;">No</button>
+                    </div>
+                </div>
+            </div>
+
+<body oncontextmenu="return false">
+    <div class="marquee-container">
+        <span class="marquee-text">READ THE QUESTIONS CAREFULLY BEFORE YOU CHOOSE YOUR ANSWER</span>
+    </div>
+      <!--<button onclick="showAlert()">Click Me</button>-->
+
+    <!-- Custom Confirmation Alert -->
+    <div class="overlay" id="overlay">
+        <div class="custom-alert">
+            <h2>ADVICE => Always study and Prepare for your Examination </h2>
+            <div class="alert-buttons">
+                <button class="ok-btn" onclick="confirmAction(true)">FINE</button>
+                <button class="cancel-btn" onclick="confirmAction(false)">COOL</button>
+            </div>
+        </div>
+    </div>
+    <div id="header">
+        <div id="logout-container">
+            <button id="logout" onclick="logout()">Logout</button>
+        </div>
+        <div id="logo">
+            <img src="img\templogo1.png" alt=" COLLEGE CBT PORTAL">
+        </div>
+        <div id="student-info">
+            <strong>ATTENTION ! CLICK ON OK BUTTON WHEN YOUR TIME IS OFF TO SUBMIT YOUR SCORE AND COMPLETE YOUR EXAMS</strong>
+               <p id="datetime"></p>
+            <div id="welcome-message"><label id="usernameDisplay"></label></div>
+            <img id="userImage">
+            <span id="userName"></span>
+        </div>
+        <h3>FIRST TERM EXAMINATION 2025/2026 ACADEMIC SESSION</h3>
+        
+        <div id="student-info">
+<h2 id="usernameDisplay"></h2>
+<div id="datetime"></div>
+<div id="timer"></div>
+
+
+
+
+
+
+
+<div class="header">
+  <div><b>Exam: <span id="examInfo"></span></b></div>
+ 
+</div>
+<div class="question-container  ">
+     <div class="scroll-container">
+        <div class="question-box"> </div>
+         <h5 style="color: black;">INSTRUCTIONS:  READ THE QUESTIONS CAREFULLY BEFORE YOU CHOOSE YOUR ANSWER   </h5>
+
+          <div id="questionText"></div>
+          
+  </div>
+
+          <div id="questionImageContainer"></div>
+
+           <div class="option-group">
+            <label class="option">OptionA<input type="radio" name="option" value="A"> <span id="optA"></span></label><br>
+            </div>
+             <div class="option-group">
+            <label class="option">OptionB<input type="radio" name="option" value="B"> <span id="optB"></span></label><br>
+            </div>
+             <div class="option-group">
+            <label class="option">OptionC<input type="radio" name="option" value="C"> <span id="optC"></span></label><br>
+            </div>
+             <div class="option-group">
+            <label class="option">OptionD<input type="radio" name="option" value="D"> <span id="optD"></span></label><br>
+          </div>
+
+
+        </div>
+  
+
+  <div class="nav-buttons">
+    <button onclick="prevQuestion()" class="btn-cool">Previous</button>
+    <button onclick="nextQuestion()" class="btn-cool">Next</button>
+    <button onclick="showResult()" class="btn-cool">Submit</button>
+  </div>
+</div>
+
+
+<button id="submitBtn" style="display:none;" onclick="showResult()">Submit Exam</button>
+
+  <div class="scroll-container">
+                <div id="questionButtons" class="questionButtons"></div>
+              </div>
+
+               <div id="userAnswerCount">
+        <p id="answeredLabel"></p>
+        <p id="unansweredLabel"></p>
+        <p id="answerFeedback"></p>
+</div>
+
+  </div>
+
+ 
+
+<div class="windows-activate">
+                           <p> &copy cbt.wisdomschools.org</p>
+                        </div>
+
+<script>
+let questions = [];
+let currentQuestion = 0;
+let userAnswers = [];
+
+window.onload = function () {
+            document.getElementById("usernameDisplay").innerText = "HELLO. " + username;
+            if (!username || username.trim() === "") {
+              username = localStorage.getItem("username") || "Unknown Student";
+            }
+
+            //loadQuestion();
+            //fetchTimer();
+            countUserSelections();
+            updateDateTime();
+            renderQuestionButtons();
+            //shuffleQuestions();
+            setInterval(updateDateTime, 1000);
+          };
+
+
+
+const cls = sessionStorage.getItem('class');
+const subject = sessionStorage.getItem('subject');
+const type = sessionStorage.getItem('type');
+const username = sessionStorage.getItem('username');
+const userImage = sessionStorage.getItem('image');
+
+document.getElementById('examInfo').innerHTML = `${cls.toUpperCase()} - ${subject.toUpperCase()} (${type.toUpperCase()})`;
+document.getElementById('userName').innerText = username;
+document.getElementById('userImage').src = userImage;
+
+// Timer
+let timeLeft = 15 * 60; // 15 minutes
+const timerEl = document.getElementById('timer');
+const timerInterval = setInterval(() => {
+    let min = Math.floor(timeLeft/60);
+    let sec = timeLeft % 60;
+    timerEl.textContent = `Time: ${min}:${sec < 10 ? '0' + sec : sec}`;
+    timeLeft--;
+    if(timeLeft < 0) { clearInterval(timerInterval); showResult(); }
+}, 1000);
+
+// Load questions
+fetch('questions.json')
+.then(res => res.json())
+.then(data => {
+    if(data[cls] && data[cls][subject] && data[cls][subject][type]){
+        questions = data[cls][subject][type];
+        displayQuestion();
+    } else {
+        alert("No questions found for selected class/subject/type");
+    }
+});
+
+function displayQuestion() {
+    if(currentQuestion >= questions.length) {
+        document.querySelector('.question-box').style.display = 'none';
+        document.getElementById('submitBtn').style.display = 'inline-block';
+        return;
+    }
+    document.querySelector('.question-box').style.display = 'block';
+    document.getElementById('submitBtn').style.display = 'none';
+
+    const q = questions[currentQuestion];
+    document.getElementById('questionText').innerText = `${currentQuestion + 1}. ${q.question}`;
+    document.getElementById('optA').innerText = q.options.A;
+    document.getElementById('optB').innerText = q.options.B;
+    document.getElementById('optC').innerText = q.options.C;
+    document.getElementById('optD').innerText = q.options.D;
+
+    const radios = document.getElementsByName('option');
+    radios.forEach(r => r.checked = false);
+    if(userAnswers[currentQuestion]) {
+        document.querySelector(`input[name="option"][value="${userAnswers[currentQuestion]}"]`).checked = true;
+    }
+}
+
+function nextQuestion() {
+    saveAnswer();
+    if(currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        displayQuestion();
+    } else {
+        showResult();
+    }
+}
+
+function prevQuestion() {
+    saveAnswer();
+    if(currentQuestion > 0) {
+        currentQuestion--;
+        displayQuestion();
+    }
+}
+
+function saveAnswer() {
+    const selected = document.querySelector('input[name="option"]:checked');
+    if(selected) {
+        userAnswers[currentQuestion] = selected.value;
+    }
+}
+
+function showResult() {
+    clearInterval(timerInterval);
+    saveAnswer();
+    let score = 0;
+    questions.forEach((q,i) => {
+        if(userAnswers[i] === q.answer) score++;
+    });
+    alert(`Exam finished!\nScore: ${score} out of ${questions.length}`);
+    window.location.href = 'index.html';
+}
+
+document.addEventListener('keydown', function (event) {
+            const key = event.key.toUpperCase();
+
+            // Answer selection
+            if (['A', 'B', 'C', 'D'].includes(key)) {
+                const optionId = 'option' + key;
+                const radio = document.getElementById(optionId);
+                if (radio) {
+                    radio.checked = true;
+                    saveUserAnswer(); // Save immediately after selection
+                }
+            }
+
+            // Navigation with arrows
+            if (event.key === 'ArrowRight') {
+                nextQuestion();
+            } else if (event.key === 'ArrowLeft') {
+                previousQuestion();
+            }
+        });
+        function shuffleQuestions() {
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]]; // Swap elements
+            }
+        }
+
+          document.addEventListener('keydown', function (event) {
+          const key = event.key.toLowerCase();
+
+                  if ((event.ctrlKey && (key === 'u' || key === 's')) || ['s', 'u'].includes(key)) {
+                    event.preventDefault(); // Stop default browser action
+                     alert("your examination session will be terminated");
+                    event.stopPropagation();
+                    //window.location.href = "logout.php";
+                     alert("your examination session will be terminated");
+                    return false;
+                  }
+                  else{
+
+                  }
+        });  
+
+
+         function renderQuestionButtons() {
+              const container = document.getElementById('questionButtons');
+              container.innerHTML = '';
+
+              for (let i = 0; i < questions.length; i++) {
+                const btn = document.createElement('button');
+                btn.textContent = i + 1;
+                btn.className = 'question-btn';
+                btn.onclick = () => {
+                  saveUserAnswer();
+                  currentQuestionIndex = i;
+                  loadQuestion();
+                  highlightCurrentButton();
+                  countUserSelections();
+                };
+                container.appendChild(btn);
+              }
+
+              highlightCurrentButton();
+            }
+
+            function highlightCurrentButton() {
+              document.querySelectorAll('.question-btn').forEach((btn, index) => {
+                const answered = userAnswers[index] !== undefined;
+                const current = index === currentQuestionIndex;
+                btn.style.backgroundColor = current
+                  ? '#5cb85c'
+                  : (answered ? '#337ab7' : '#eee');
+                btn.style.color = current || answered ? 'white' : 'black';
+              });
+            }
+
+   function updateDateTime() {
+            const now = new Date();
+            const day = now.getDate();
+            const month = now.toLocaleString('default', { month: 'long' });
+            const year = now.getFullYear();
+            const suffix = (day === 1 || day === 21 || day === 31) ? "st" : (day === 2 || day === 22) ? "nd" : (day === 3 || day === 23) ? "rd" : "th";
+            let hour = now.getHours();
+            let minute = now.getMinutes();
+            let second = now.getSeconds();
+            const ampm = hour >= 12 ? "PM" : "AM";
+            hour = hour % 12 || 12;
+            minute = minute < 10 ? "0" + minute : minute;
+            second = second < 10 ? "0" + second : second;
+            document.getElementById("datetime").innerText = `${month} ${day}${suffix} ${year}, ${hour}:${minute}:${second} ${ampm}`;
+            document.getElementById("copyright").innerText = `© ${year} www.wisdom.schools.org`;
+              }
+
+
+               function countUserSelections() {
+            const answered = userAnswers.filter(ans => ans !== undefined).length;
+            const total = questions.length;
+            const unanswered = total - answered;
+            document.getElementById("answeredLabel").innerText = `You have answered ${answered} out of ${total} questions.`;
+            document.getElementById("unansweredLabel").innerText = `You have ${unanswered} unanswered questions.`;
+          }
+
+
+          function logout() {
+            fetch('logout.html', { method: 'POST' }) // Call actual logout script
+                .then(() => {
+                    localStorage.removeItem('username'); // Clear localStorage on logout
+                    window.location.href = "index.html";
+                })
+                .catch(error => console.error('Logout error:', error));
+        }
+
+</script>
+</body>
+</html>

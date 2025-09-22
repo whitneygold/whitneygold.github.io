@@ -1,14 +1,14 @@
 [
   {
     "id": 1,
-    "username": "Admin",
-    "password": "1234",
-    "image": "images/Admin1.png"
+    "username": "admin",
+    "password": "admin",
+    "image": "adekunle.jpg"
   },
   {
     "id": 2,
-    "username": "mary456",
-    "password": "secret456",
-    "image": "images/mary.png"
+    "username": "philip",
+    "password": "54321",
+    "image": "philip.jpg"
   }
 ]

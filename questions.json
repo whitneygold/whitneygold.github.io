@@ -1,0 +1,167 @@
+{
+
+
+  "jss1": {
+
+
+    "mathematics": {
+
+
+      "objectives": [
+        {
+          "question": "2 + 3 = ?",
+          "options": { "A": "4", "B": "5", "C": "6", "D": "7" },
+          "answer": "B"
+        },
+        {
+          "question": "5 - 2 = ?",
+          "options": { "A": "2", "B": "3", "C": "4", "D": "5" },
+          "answer": "B"
+        },
+
+
+
+
+        {
+          "question": "2 + 8 = ?",
+          "options": { "A": "4", "B": "10", "C": "6", "D": "7" },
+          "answer": "B"
+        },
+        {
+          "question": "5 - 10 = ?",
+          "options": { "A": "2", "B": "-5", "C": "4", "D": "5" },
+          "answer": "B"
+        },
+
+
+        {
+          "question": "2 + 38 = ?",
+          "options": { "A": "4", "B": "40", "C": "6", "D": "7" },
+          "answer": "B"
+        },
+        {
+          "question": "5 - 25 = ?",
+          "options": { "A": "2", "B": "-20", "C": "4", "D": "5" },
+          "answer": "B"
+        }
+
+      ]
+
+
+
+    }
+
+
+  },
+
+
+
+  "jss2": {
+
+
+    "mathematics": {
+
+
+      "objectives": [
+        {
+          "question": " 2 + fuck = ?",
+          "options": { "A": "4", "B": "5", "C": "6", "D": "7" },
+          "answer": "B"
+        },
+        {
+          "question": "5 - 2 = ?",
+          "options": { "A": "2", "B": "3", "C": "4", "D": "5" },
+          "answer": "B"
+        },
+
+
+
+
+        {
+          "question": "2 + 8 = ?",
+          "options": { "A": "4", "B": "10", "C": "6", "D": "7" },
+          "answer": "B"
+        },
+        {
+          "question": "5 - 10 = ?",
+          "options": { "A": "2", "B": "-5", "C": "4", "D": "5" },
+          "answer": "B"
+        },
+
+
+        {
+          "question": "2 + 38 = ?",
+          "options": { "A": "4", "B": "40", "C": "6", "D": "7" },
+          "answer": "B"
+        },
+        {
+          "question": "5 - 25 = ?",
+          "options": { "A": "2", "B": "-20", "C": "4", "D": "5" },
+          "answer": "B"
+        }
+
+      ]
+
+
+
+    }
+
+
+  },
+ 
+   "jss3": {
+
+
+    "mathematics": {
+
+
+      "objectives": [
+        {
+          "question": " 2 + fuck = ?",
+          "options": { "A": "4", "B": "5", "C": "6", "D": "7" },
+          "answer": "B"
+        },
+        {
+          "question": "5 - 2 = ?",
+          "options": { "A": "2", "B": "3", "C": "4", "D": "5" },
+          "answer": "B"
+        },
+
+
+
+
+        {
+          "question": "2 + 8 = ?",
+          "options": { "A": "4", "B": "10", "C": "6", "D": "7" },
+          "answer": "B"
+        },
+        {
+          "question": "5 - 10 = ?",
+          "options": { "A": "2", "B": "-5", "C": "4", "D": "5" },
+          "answer": "B"
+        },
+
+
+        {
+          "question": "2 + 38 = ?",
+          "options": { "A": "4", "B": "40", "C": "6", "D": "7" },
+          "answer": "B"
+        },
+        {
+          "question": "5 - 25 = ?",
+          "options": { "A": "2", "B": "-20", "C": "4", "D": "5" },
+          "answer": "B"
+        }
+
+      ]
+
+
+
+    }
+
+
+  }
+     
+
+
+}
