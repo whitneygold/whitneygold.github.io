@@ -1,0 +1,362 @@
+  [
+                  {
+                    "question_Text": "1. Which of the following is an example of a natural resource?",
+                    "OptionA": "Electricity",
+                    "OptionB": "Coal",
+                    "OptionC": "Plastic",
+                    "OptionD": "Steel",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "2. What is the primary mode of transportation for international trade?",
+                    "OptionA": "Air transport",
+                    "OptionB": "Sea transport",
+                    "OptionC": "Road transport",
+                    "OptionD": "Rail transportation",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "3. Which of the following is considered a harmful substance?",
+                    "OptionA": "Water",
+                    "OptionB": "Cigarettes",
+                    "OptionC": "Vegetables",
+                    "OptionD": "Milk",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "4. What is the process of treating water to make it safe for drinking called?",
+                    "OptionA": "Filtration",
+                    "OptionB": "Purification",
+                    "OptionC": "Distillation",
+                    "OptionD": "Sedimentation",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "5. Which harmful traditional practice involves forcing children to work for money?",
+                    "OptionA": "Child marriage",
+                    "OptionB": "Child labor",
+                    "OptionC": "Dowry system",
+                    "OptionD": "Polygamy",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "6. Which is a harmful traditional practice that affects the health of women and girls?",
+                    "OptionA": "Female genital mutilation",
+                    "OptionB": "Festive celebrations",
+                    "OptionC": "Traditional dance",
+                    "OptionD": "Storytelling",
+                    "Answer": "optionA",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "7. One way to reduce the impact of harmful traditional practices is?",
+                    "OptionA": "Promoting awareness and education",
+                    "OptionB": "Encouraging secrecy",
+                    "OptionC": "Supporting harmful practices",
+                    "OptionD": "Ignoring the issue",
+                    "Answer": "optionA",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "8. Who among these is a common victim of human trafficking?",
+                    "OptionA": "Government officials",
+                    "OptionB": "teachers",
+                    "OptionC": "Soldiers",
+                    "OptionD": "Females",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "9. The process of getting information or messages across to people, either verbally or non-verbally is referred to as?",
+                    "OptionA": "Amalgamation",
+                    "OptionB": "News",
+                    "OptionC": "Media",
+                    "OptionD": "Communication",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "10. Which of the following can result in war?",
+                    "OptionA": "Cooperation",
+                    "OptionB": "Peace",
+                    "OptionC": "Unity",
+                    "OptionD": "Conflict",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "11. The voting age in Nigeria is",
+                    "OptionA": "18",
+                    "OptionB": "20",
+                    "OptionC": "30",
+                    "OptionD": "22",
+                    "Answer": "optionA",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "12. Which of the following is not a form of drug abuse?",
+                    "OptionA": "Stimulants",
+                    "OptionB": "Sleep-inducing drugs",
+                    "OptionC": "Death pills",
+                    "OptionD": "Hallucination-producing chemicals",
+                    "Answer": "optionC",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "13. Reporting suspicious movement to the police can __",
+                    "OptionA": "Assist criminals",
+                    "OptionB": "Escalate crime",
+                    "OptionC": "Prevent crime",
+                    "OptionD": "Expose the police to danger",
+                    "Answer": "optionC",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "14. Which among these is the most important in socializing a child?",
+                    "OptionA": "Community",
+                    "OptionB": "School",
+                    "OptionC": "Family",
+                    "OptionD": "Peer group",
+                    "Answer": "optionC",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "15. The administrative head of the polytechnic is __",
+                    "OptionA": "Vice-chancellor",
+                    "OptionB": "Principal",
+                    "OptionC": "Provost",
+                    "OptionD": "Rector",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "16. Transportation by __ helps to move people and heavy goods easily",
+                    "OptionA": "Road",
+                    "OptionB": "Water",
+                    "OptionC": "Air",
+                    "OptionD": "Rail",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "17. A low land between two hills is called?",
+                    "OptionA": "Mountain",
+                    "OptionB": "Lake",
+                    "OptionC": "Ocean",
+                    "OptionD": "Valley",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "18. Love and willingness to serve one’s country is",
+                    "OptionA": "Citizenship",
+                    "OptionB": "Patriotism",
+                    "OptionC": "Nationality",
+                    "OptionD": "Slavery",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "19. When a person cannot live without a particular drug, he is said to be a __",
+                    "OptionA": "Drug trafficker",
+                    "OptionB": "Drug addict",
+                    "OptionC": "Drug abuse",
+                    "OptionD": "Drug baron",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "20. Which of the following is NOT a main economic activity?",
+                    "OptionA": "Industry",
+                    "OptionB": "Education",
+                    "OptionC": "Export",
+                    "OptionD": "Farming",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "21. __ is not a voluntary organization found in schools",
+                    "OptionA": "Red cross",
+                    "OptionB": "Boy scout",
+                    "OptionC": "Girls guide",
+                    "OptionD": "Black axe",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "22. Man is referred to as a social animal because he ___",
+                    "OptionA": "Learns social studies",
+                    "OptionB": "Lives in a community",
+                    "OptionC": "Interacts with others",
+                    "OptionD": "Acquires wealth",
+                    "Answer": "optionC",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "23. Which of the following is a way of determining the population of a country?",
+                    "OptionA": "Election",
+                    "OptionB": "Census",
+                    "OptionC": "Registration",
+                    "OptionD": "Marriage",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "24. All but one are consequences of harmful traditional practices",
+                    "OptionA": "Bad image",
+                    "OptionB": "Emotional trauma",
+                    "OptionC": "Loss of man power",
+                    "OptionD": "Love of money",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "25. All are ways to promote peace except",
+                    "OptionA": "Co-operation",
+                    "OptionB": "Dialogue",
+                    "OptionC": "Tolerance",
+                    "OptionD": "Disagreement",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "26. Proper administration of social justice in our society leads to ­­__",
+                    "OptionA": "Vote buying",
+                    "OptionB": "Equal opportunity",
+                    "OptionC": "Ethnic rivalry",
+                    "OptionD": "Instability",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "27. Two types of conflict are",
+                    "OptionA": "Small and big",
+                    "OptionB": "Long and short",
+                    "OptionC": "Violent and non-violent",
+                    "OptionD": "Verbal and non-verbal",
+                    "Answer": "optionC",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "28. Which of these is not considered a harmful traditional practice?",
+                    "OptionA": "Circumcision of male child",
+                    "OptionB": "Female gender mutilation",
+                    "OptionC": "Tribal mark",
+                    "OptionD": "Incised mark",
+                    "Answer": "optionA",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "29. The constitution is above every law in the country; this means that it is __",
+                    "OptionA": "Common",
+                    "OptionB": "Sectional",
+                    "OptionC": "Supreme",
+                    "OptionD": "Unique",
+                    "Answer": "optionC",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "30. Which of the following features attracts people to identify with a political party?",
+                    "OptionA": "Belief",
+                    "OptionB": "Logo",
+                    "OptionC": "Manifesto",
+                    "OptionD": "Poster",
+                    "Answer": "optionC",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "31. Which of the following is not influenced by culture?",
+                    "OptionA": "Agriculture",
+                    "OptionB": "Dressing",
+                    "OptionC": "Language",
+                    "OptionD": "Weather",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "32. One of the consequences of over population is",
+                    "OptionA": "High production",
+                    "OptionB": "Unemployment",
+                    "OptionC": "increased in death rate",
+                    "OptionD": "sufficient food",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "33. Democracy originated from__",
+                    "OptionA": "America",
+                    "OptionB": "Britain",
+                    "OptionC": "Knight",
+                    "OptionD": "Greece",
+                    "Answer": "optionD",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "34. Culture is dynamic means culture is",
+                    "OptionA": "Absorbing",
+                    "OptionB": "Changing",
+                    "OptionC": "Static",
+                    "OptionD": "Transferable",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "35. There are __ states in the North-West geo-political zone",
+                    "OptionA": "5",
+                    "OptionB": "6",
+                    "OptionC": "7",
+                    "OptionD": "8",
+                    "Answer": "optionC",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "36. Which of these is a way of conserving water",
+                    "OptionA": "Leaving taps running",
+                    "OptionB": "Washing with excess water",
+                    "OptionC": "Fixing leaking pipes",
+                    "OptionD": "Polluting rivers",
+                    "Answer": "optionC",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "37. The government agency responsible for water supply in many Nigerian states is called",
+                    "OptionA": "Power Holding Company",
+                    "OptionB": "EFCC",
+                    "OptionC": "Water Corporation",
+                    "OptionD": "Board of Water Director",
+                    "Answer": "optionC",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "38. Which of the following diseases can be caused by drinking contaminated water?",
+                    "OptionA": "Tuberculosis",
+                    "OptionB": "Malaria",
+                    "OptionC": "Cholera",
+                    "OptionD": "Measles",
+                    "Answer": "optionC",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "39. A common method used by traffickers is",
+                    "OptionA": "Giving scholarship",
+                    "OptionB": "Promising fake job opportunity",
+                    "OptionC": "Building schools",
+                    "OptionD": "Selling food stuff",
+                    "Answer": "optionB",
+                    "question_Image": null
+                  },
+                  {
+                    "question_Text": "40. Human trafficking mostly affects people who are:",
+                    "OptionA": "poor",
+                    "OptionB": "educated",
+                    "OptionC": "Wealthy",
+                    "OptionD": "Non-citizens",
+                    "Answer": "optionA",
+                    "question_Image": null
+                  }
+]

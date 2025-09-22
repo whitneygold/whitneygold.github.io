@@ -1,0 +1,29 @@
+[
+  {
+    "question_Text": "1. Which of the following represents the quadratic formula? $$x = \\frac{-b \\pm \\sqrt{b^2-4ac}}{2a}$$",
+    "OptionA": "x = (-b + √(b²-4ac))/a",
+    "OptionB": "x = (-b ± √(b²-4ac))/(2a)",
+    "OptionC": "x = (b ± √(b²-4ac))/(2a)",
+    "OptionD": "x = (-b ± √(b²-4ac))/2",
+    "Answer": "optionB",
+    "question_Image": null
+  },
+  {
+    "question_Text": "2. Evaluate the limit: $$\\lim_{x\\to 0} \\frac{\\sin x}{x}$$",
+    "OptionA": "0",
+    "OptionB": "1",
+    "OptionC": "Undefined",
+    "OptionD": "Infinity",
+    "Answer": "optionB",
+    "question_Image": null
+  },
+  {
+    "question_Text": "3. The area of a circle is given by $$A = \\pi r^2$$",
+    "OptionA": "A = πr",
+    "OptionB": "A = πr²",
+    "OptionC": "A = 2πr",
+    "OptionD": "A = πr³",
+    "Answer": "optionB",
+    "question_Image": null
+  }
+]

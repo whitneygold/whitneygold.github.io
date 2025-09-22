@@ -1,0 +1,113 @@
+[
+  {
+    "question_Text": "1. What is the value of 7 + 8?",
+    "OptionA": "14",
+    "OptionB": "15",
+    "OptionC": "16",
+    "OptionD": "17",
+    "Answer": "optionB",
+    "question_Image": "j1_math_que_48.png"
+  },
+  {
+    "question_Text": "2. A triangle has how many sides?",
+    "OptionA": "2",
+    "OptionB": "3",
+    "OptionC": "4",
+    "OptionD": "5",
+    "Answer": "optionB",
+    "question_Image": null
+  },
+  {
+    "question_Text": "3. Which of the following is an even number?",
+    "OptionA": "7",
+    "OptionB": "11",
+    "OptionC": "8",
+    "OptionD": "15",
+    "Answer": "optionC",
+    "question_Image": null
+  },
+  {
+    "question_Text": "4. What is the square of 5?",
+    "OptionA": "10",
+    "OptionB": "20",
+    "OptionC": "25",
+    "OptionD": "15",
+    "Answer": "optionC",
+    "question_Image": null
+  },
+  {
+    "question_Text": "5. Which of the following is a prime number?",
+    "OptionA": "9",
+    "OptionB": "12",
+    "OptionC": "15",
+    "OptionD": "13",
+    "Answer": "optionD",
+    "question_Image": null
+  },
+  {
+    "question_Text": "6. What is the value of 7 + 8?",
+    "OptionA": "14",
+    "OptionB": "15",
+    "OptionC": "16",
+    "OptionD": "17",
+    "Answer": "optionB",
+    "question_Image": null
+  },
+  {
+    "question_Text": "7. A triangle has how many sides?",
+    "OptionA": "2",
+    "OptionB": "3",
+    "OptionC": "4",
+    "OptionD": "5",
+    "Answer": "optionB",
+    "question_Image": null
+  },
+  {
+    "question_Text": "8. Which of the following is an even number?",
+    "OptionA": "7",
+    "OptionB": "11",
+    "OptionC": "8",
+    "OptionD": "15",
+    "Answer": "optionC",
+    "question_Image": null
+  },
+  {
+    "question_Text": "9. What is the square of 5?",
+    "OptionA": "10",
+    "OptionB": "20",
+    "OptionC": "25",
+    "OptionD": "15",
+    "Answer": "optionC",
+    "question_Image": null
+  },
+  {
+    "question_Text": "10. Which of the following is a prime number?",
+    "OptionA": "9",
+    "OptionB": "12",
+    "OptionC": "15",
+    "OptionD": "13",
+    "Answer": "optionD",
+    "question_Image": "j1_math_que_34.png"
+  },
+  {
+   "question_Text": "11.What animal sound is this?",
+  
+  
+  "question_Audio": "uploads/audio/cow.mp3",
+  "OptionA": "Dog",
+  "OptionA_Image": "j1_math_que_34.png",
+  "OptionA_Audio": "uploads/audio/dog.mp3",
+  "OptionB": "Cat",
+  "OptionB_Image": "j1_math_que_34.png",
+  "OptionB_Audio": null,
+  "OptionC": "Cow",
+  "OptionC_Image": "j1_math_que_34.png",
+  "OptionC_Audio": "uploads/audio/cow.mp3",
+  "OptionD": "Goat",
+  "OptionD_Image": "j1_math_que_34.png",
+  "OptionD_Audio": null,
+  "Answer": "OptionC",
+  "question_Image": "j1_math_que_34.png"
+}
+
+]

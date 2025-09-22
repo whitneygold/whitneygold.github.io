@@ -1,0 +1,459 @@
+ [
+
+    {
+      "question_Text": "1. Which of the following is the primary source of energy for life on Earth?",
+      "OptionA": "Wind",
+      "OptionB": "Sun",
+      "OptionC": "Water",
+      "OptionD": "Moon",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "2. The process by which green plants convert solar energy into chemical energy is called:",
+      "OptionA": "Respiration",
+      "OptionB": "Transpiration",
+      "OptionC": "Photosynthesis",
+      "OptionD": "Digestion",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "3. The diagram represents a",
+      "OptionA": "Cell",
+      "OptionB": "Filament",
+      "OptionC": "Colony",
+      "OptionD": "Part of living organism",
+      "Answer": "optionB",
+      "question_Image": "bio_ss1_3_and_4.png"
+    },
+    {
+      "question_Text": "4. Pyrenoid is present in the structure labelled",
+      "OptionA": "IV",
+      "OptionB": "III",
+      "OptionC": "II",
+      "OptionD": "I",
+      "Answer": "optionB",
+      "question_Image": "bio_ss1_3_and_4.png"
+    },
+    {
+      "question_Text": "5. In photosynthesis, light energy is transformed into:",
+      "OptionA": "Mechanical energy",
+      "OptionB": "Electrical energy",
+      "OptionC": "Heat energy",
+      "OptionD": "Chemical energy",
+      "Answer": "optionD",
+      "question_Image": null
+    },
+    {
+      "question_Text": "6. Which of the following organisms can carry out photosynthesis?",
+      "OptionA": "Fungi",
+      "OptionB": "Bacteria",
+      "OptionC": "Algae",
+      "OptionD": "Animal cells",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "7. The energy stored in the food we eat is a form of:",
+      "OptionA": "Mechanical energy",
+      "OptionB": "Electrical energy",
+      "OptionC": "Chemical energy",
+      "OptionD": "Heat energy",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "8. In cellular respiration, chemical energy is converted into:",
+      "OptionA": "Solar energy",
+      "OptionB": "Sound energy",
+      "OptionC": "Mechanical and heat energy",
+      "OptionD": "Nuclear energy",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "9. Which of the following best describes energy transformation in a food chain?",
+      "OptionA": "Heat to light",
+      "OptionB": "Chemical to sound",
+      "OptionC": "Light to chemical to mechanical",
+      "OptionD": "Mechanical to electrical",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "10. The main purpose of respiration in living organisms is to:",
+      "OptionA": "Release oxygen",
+      "OptionB": "Absorb carbon dioxide",
+      "OptionC": "Produce energy",
+      "OptionD": "Store water",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+
+    {
+      "question_Text": "11. Which of the following is NOT a product of photosynthesis?",
+      "OptionA": "Glucose",
+      "OptionB": "Oxygen",
+      "OptionC": "Carbon dioxide",
+      "OptionD": "Water",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "12. What happens to energy as it moves through the trophic levels of a food chain?",
+      "OptionA": "It increases",
+      "OptionB": "It remains the same",
+      "OptionC": "It is lost as heat",
+      "OptionD": "It is converted to water",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "13. Which of the following are consumers in these food chains?",
+      "OptionA": "Maize and rabbit",
+      "OptionB": "Chicken, rats and maize",
+      "OptionC": "Eagle, maize and snakes",
+      "OptionD": "Humans, eagle and snake",
+      "Answer": "optionD",
+      "question_Image": "bio_ss1_13.png"
+    },
+    {
+      "question_Text": "14. An importance of food web is that living organisms",
+      "OptionA": "Use web to collect food",
+      "OptionB": "Can live on their own",
+      "OptionC": "Have to form a web",
+      "OptionD": "Depend on one another for their existence",
+      "Answer": "optionD",
+      "question_Image": null
+    },
+    {
+      "question_Text": "15. Branch of Biology that is most useful in improving animal breeds is:",
+      "OptionA": "Ecology",
+      "OptionB": "Genetics",
+      "OptionC": "Anatomy",
+      "OptionD": "Morphology",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "16. Which branch of Biology helps farmers understand relationships among organisms in an ecosystem?",
+      "OptionA": "Genetics",
+      "OptionB": "Physiology",
+      "OptionC": "Ecology",
+      "OptionD": "Botany",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "17. The application of Biology to agriculture has helped in the development of:",
+      "OptionA": "New types of machinery",
+      "OptionB": "Genetically modified crops",
+      "OptionC": "Fossil fuels",
+      "OptionD": "Synthetic fibers",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "18. The excretory product in protozoans is",
+      "OptionA": "Amino acids",
+      "OptionB": "Uric acids",
+      "OptionC": "Ammonia",
+      "OptionD": "Urea",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "19. Rural-urban migration in developing countries can be prevented by",
+      "OptionA": "Increasing the number of years in school",
+      "OptionB": "Putting up more factories in urban areas",
+      "OptionC": "Having boarding schools in rural areas",
+      "OptionD": "Even distribution of facilities in both regions",
+      "Answer": "optionD",
+      "question_Image": null
+    },
+    {
+      "question_Text": "20. What is a pest?",
+      "OptionA": "A disease in crops",
+      "OptionB": "An animal that eats grass",
+      "OptionC": "An organism that damages crops",
+      "OptionD": "A fertilizer used in farming",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+
+    {
+      "question_Text": "21. Which of the following is a common insect pest of crops?",
+      "OptionA": "Earthworm",
+      "OptionB": "Grasshopper",
+      "OptionC": "Frog",
+      "OptionD": "Snail",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "22. The speed of wind is measured using the",
+      "OptionA": "Wind vane",
+      "OptionB": "Anemometer",
+      "OptionC": "Photometer",
+      "OptionD": "Barometer",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "23. Which of the following factors is the main problem facing xerophytic plants?",
+      "OptionA": "Competition for sunlight",
+      "OptionB": "Conservation of water",
+      "OptionC": "Lack of adequate water",
+      "OptionD": "Inadequate roots for water absorption",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "24. Which of the following is a biotic component of an ecosystem?",
+      "OptionA": "Soil",
+      "OptionB": "Fungi",
+      "OptionC": "Light",
+      "OptionD": "Rainfall",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "25. Which of the following is a bacterial disease of crops?",
+      "OptionA": "Maize rust",
+      "OptionB": "Cassava mosaic",
+      "OptionC": "Citrus canker",
+      "OptionD": "Rice blast",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "26. Which of the following food substances is incorrectly linked to its enzyme?",
+      "OptionA": "Protein - trypsin",
+      "OptionB": "Fat - lipase",
+      "OptionC": "Sucrose - pepsin",
+      "OptionD": "Starch - amylase",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "27. The parts that supply food and water to the developing embryo are labelled",
+      "OptionA": "I and II",
+      "OptionB": "III and V",
+      "OptionC": "V and VI",
+      "OptionD": "II and III",
+      "Answer": "optionC",
+      "question_Image": "bio_ss1_27_and28.png"
+    },
+    {
+      "question_Text": "28. The part III is the",
+      "OptionA": "Albumen",
+      "OptionB": "Chalaza",
+      "OptionC": "Yolk",
+      "OptionD": "Air space",
+      "Answer": "optionB",
+      "question_Image": "bio_ss1_27_and28.png"
+    },
+    {
+      "question_Text": "29. In a particular habitat the role of an organism is referred to as its",
+      "OptionA": "Level",
+      "OptionB": "Biomass",
+      "OptionC": "Niche",
+      "OptionD": "Space",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "30. In a population, food shortage may lead to",
+      "OptionA": "An increased survival rate",
+      "OptionB": "High reproduction rate",
+      "OptionC": "Intra-specific competition",
+      "OptionD": "Low rate of migration",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+
+    {
+      "question_Text": "31. Which of the following is an example of a freshwater habitat?",
+      "OptionA": "Ocean",
+      "OptionB": "Lagoon",
+      "OptionC": "River",
+      "OptionD": "Sea",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "32. Organisms that live at the bottom of aquatic habitats are called:",
+      "OptionA": "Nekton",
+      "OptionB": "Benthos",
+      "OptionC": "Plankton",
+      "OptionD": "Zooplankton",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "33. The major difference between freshwater and marine habitats is:",
+      "OptionA": "Temperature",
+      "OptionB": "Salinity",
+      "OptionC": "Size of organisms",
+      "OptionD": "Shape of organisms",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "34. A common plant found in aquatic habitats is:",
+      "OptionA": "Fern",
+      "OptionB": "Moss",
+      "OptionC": "Water lily",
+      "OptionD": "Sunflower",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "35. Which of the following organisms is NOT likely to be found in a marine habitat?",
+      "OptionA": "Whale",
+      "OptionB": "Crocodile",
+      "OptionC": "Shark",
+      "OptionD": "Starfish",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "36. Organisms that float freely near the surface of water are called:",
+      "OptionA": "Benthos",
+      "OptionB": "Nekton",
+      "OptionC": "Plankton",
+      "OptionD": "Amphibians",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "37. Muscles are attached to bones by means of",
+      "OptionA": "Tendons",
+      "OptionB": "Ligaments",
+      "OptionC": "Cartilage",
+      "OptionD": "Nerves",
+      "Answer": "optionA",
+      "question_Image": null
+    },
+    {
+      "question_Text": "38. The zone of a pond or lake where light can penetrate is called the:",
+      "OptionA": "Aphotic zone",
+      "OptionB": "Benthic zone",
+      "OptionC": "Littoral zone",
+      "OptionD": "Deep zone",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "39. An animal which possesses scale, nares and a backbone is likely to be a",
+      "OptionA": "Fish",
+      "OptionB": "Snail",
+      "OptionC": "Rat",
+      "OptionD": "Lizard",
+      "Answer": "optionD",
+      "question_Image": null
+    },
+    {
+      "question_Text": "40. An example of an organism adapted to live in the desert is:",
+      "OptionA": "Crocodile",
+      "OptionB": "Camel",
+      "OptionC": "Fish",
+      "OptionD": "Frog",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+
+    {
+      "question_Text": "41. Which of the following is a feature of desert plants?",
+      "OptionA": "Broad leaves",
+      "OptionB": "Thick cuticles",
+      "OptionC": "Shallow roots",
+      "OptionD": "High water content",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "42. A grassland is best described as a habitat with:",
+      "OptionA": "Dense trees",
+      "OptionB": "Sparse vegetation and grasses",
+      "OptionC": "Water everywhere",
+      "OptionD": "No living organisms",
+      "Answer": "optionB",
+      "question_Image": null
+    },
+    {
+      "question_Text": "43. Which of the following structures is used for respiration in insects?",
+      "OptionA": "Lungs",
+      "OptionB": "Thorax",
+      "OptionC": "Cuticle",
+      "OptionD": "Spiracles",
+      "Answer": "optionD",
+      "question_Image": null
+    },
+    {
+      "question_Text": "44. The following are adaptations of animals to terrestrial life EXCEPT:",
+      "OptionA": "Lungs for breathing",
+      "OptionB": "Limbs for movement",
+      "OptionC": "Scales for swimming",
+      "OptionD": "Fur for insulation",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "45. The maintenance of a stable internal environment within the body of a mammal is known as",
+      "OptionA": "Osmosis",
+      "OptionB": "Plasmolysis",
+      "OptionC": "Homeostasis",
+      "OptionD": "Excretion",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "46. Which of the following is most likely to be found in a forest habitat?",
+      "OptionA": "Dolphin",
+      "OptionB": "Camel",
+      "OptionC": "Lion",
+      "OptionD": "Crab",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "47. Soil type in a terrestrial habitat affects the:",
+      "OptionA": "Rainfall",
+      "OptionB": "Temperature",
+      "OptionC": "Vegetation",
+      "OptionD": "Wind speed",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "48. The main aim of food storage is to:",
+      "OptionA": "Change the taste of food",
+      "OptionB": "Reduce cost of food",
+      "OptionC": "Preserve food and prevent spoilage",
+      "OptionD": "Make food look attractive",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "49. Which of the following methods is used to preserve dry grains like maize and beans?",
+      "OptionA": "Smoking",
+      "OptionB": "Canning",
+      "OptionC": "Sun-drying",
+      "OptionD": "Freezing",
+      "Answer": "optionC",
+      "question_Image": null
+    },
+    {
+      "question_Text": "50. Which of the following is NOT a method of food storage?",
+      "OptionA": "Smoking",
+      "OptionB": "Milling",
+      "OptionC": "Refrigeration",
+      "OptionD": "Salting",
+      "Answer": "optionB",
+      "question_Image": null
+    }
+
+        ]
+          
