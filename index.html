@@ -214,7 +214,7 @@ async function login() {
     if (user) {
         sessionStorage.setItem('username', user.username);
         sessionStorage.setItem('image', user.image);
-        window.location.href = 'dashboard.html';
+        window.location.href = 'instructions.html';
     } else {
         alert("Invalid username or password");
     }
@@ -222,3 +222,4 @@ async function login() {
 </script>
 </body>
 </html>
+
