@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exam Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f5f5f5; margin:0; padding:0;}
+    nav { background: #006400; padding: 15px; color: #fff;}
+    .nav-links { list-style: none; display:flex; gap:20px;}
+    .nav-links a { color:white; text-decoration:none;}
+    header { text-align:center; padding:20px; background:#008000; color:white;}
+    .welcome-message { text-align:center; margin:20px 0; background:#fff; padding:15px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);}
+    #student-image { width:80px; height:80px; border-radius:50%; margin-bottom:10px;}
+    .exam-sections { display:flex; justify-content:space-around; margin:20px; flex-wrap:wrap;}
+    .exam-section { background:white; padding:20px; margin:10px; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1); flex:1; min-width:250px;}
+    .btn { background:#008000; color:white; border:none; padding:10px 20px; margin-top:15px; cursor:pointer; border-radius:5px;}
+    .btn:hover { background:#004d00;}
+  </style>
+</head>
+<body>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+      <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+      <li><a href="login.html"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>
+      <li><button class="theme-toggle" id="themeToggle"><i class="fas fa-moon">Mode</i></button></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h2>2025/2026 1ST TERM COMPUTER BASED TEST EXAMINATION</h2>
+  </header>
+
+  <div class="welcome-message">
+    <img id="student-image" alt="Profile Picture">
+    <h3 id="welcome-text"></h3>
+  </div>
+
+  <form id="examForm">
+    <div class="exam-sections">
+      <div class="exam-section">
+        <h4>Select Class</h4>
+        <select id="class">
+          <option>JSS1</option>
+          <option>JSS2</option>
+          <option>JSS3</option>
+        </select>
+      </div>
+
+      <div class="exam-section">
+        <h4>Select Subject</h4>
+        <select id="subject">
+          <option>Mathematics</option>
+          <option>English_Language</option>
+          <option>Basic_Science</option>
+          <option>Basic_Technology</option>
+          <option>Business_Study</option>
+          <option>Computer_Studies</option>
+          <option>History</option>
+          <option>CRS</option>
+          <option>Home_Economics</option>
+          <option>Civic_Education</option>
+          <option>Agricultural_Science</option>
+          <option>Music</option>
+          <option>French</option>
+          <option>Diction</option>
+          <option>Social_Studies</option>
+          <option>PHE</option>
+          <option>Yoruba</option>
+        </select>
+      </div>
+
+      <div class="exam-section">
+        <h4>Select Exam Type</h4>
+        <select id="exam_type">
+          <option value="objectives">Objectives</option>
+          <option value="theory">Theory</option>
+        </select>
+      </div>
+    </div>
+
+    <center><button class="btn" type="submit">Next</button></center>
+  </form>
+
+  <script>
+    // Load logged-in user from localStorage
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if(!user) { window.location.href="login.html"; }
+    document.getElementById("student-image").src = user.image;
+    document.getElementById("welcome-text").textContent = "Welcome, " + user.username;
+
+    document.getElementById("examForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const selectedClass = document.getElementById("class").value;
+      const selectedSubject = document.getElementById("subject").value;
+      const selectedExamType = document.getElementById("exam_type").value;
+
+      localStorage.setItem("selectedClass", selectedClass);
+      localStorage.setItem("selectedSubject", selectedSubject);
+      localStorage.setItem("selectedExamType", selectedExamType);
+
+      window.location.href = "dashboard_password.html";
+    });
+
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    themeToggle.addEventListener('click', ()=>{
+      document.body.classList.toggle('dark-theme');
+      if(document.body.classList.contains('dark-theme')){
+        themeIcon.classList.remove('fa-moon'); themeIcon.classList.add('fa-sun');
+      } else { themeIcon.classList.remove('fa-sun'); themeIcon.classList.add('fa-moon'); }
+    });
+  </script>
+</body>
+</html>

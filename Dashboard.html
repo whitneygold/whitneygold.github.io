@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WISDOM GROUP OF SCHOOLS - Examination Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('img/templogo.jpg') no-repeat center center;
+      background-size: 300px 300px;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    :root {
+      --primary-color: #008000;
+      --secondary-color: #d90000;
+      --background-color: #f5f5f5;
+      --text-color: #333;
+      --card-bg: white;
+      --header-bg: #008000;
+      --header-text: white;
+      --nav-bg: #006400;
+      --input-border: #ddd;
+    }
+
+    .dark-theme {
+      --primary-color: #4CAF50;
+      --secondary-color: #ff5252;
+      --background-color: #2c2c2c;
+      --text-color: #f0f0f0;
+      --card-bg: #3c3c3c;
+      --header-bg: #2e7d32;
+      --header-text: #f0f0f0;
+      --nav-bg: #1b5e20;
+      --input-border: #555;
+    }
+
+    nav {
+      background-color: var(--nav-bg);
+      padding: 15px 0;
+      margin-bottom: 25px;
+      border-radius: 8px;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 20px;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    .nav-links li { margin-right: 20px; }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    .nav-links a:hover {
+      background-color: rgba(255,255,255,0.1);
+    }
+
+    header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-bottom: 25px;
+    }
+    .logo-container img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+
+    .welcome-message {
+      background-color: var(--card-bg);
+      padding: 15px;
+      border-left: 5px solid var(--secondary-color);
+      margin: 20px 0;
+      text-align: center;
+      border-radius: 4px;
+    }
+    #student-image {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      object-fit: cover;
+      border: 2px solid var(--primary-color);
+    }
+
+    .exam-sections {
+      display: flex;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+    .exam-section {
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      flex: 1;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .section-header {
+      background-color: var(--header-bg);
+      color: var(--header-text);
+      padding: 15px 20px;
+      font-weight: bold;
+    }
+    .section-body {
+      padding: 25px;
+    }
+    .instructions { color: red; margin-bottom: 20px; }
+    input[type="password"] {
+      width: 100%;
+      max-width: 400px;
+      padding: 12px 15px;
+      border: 1px solid var(--input-border);
+      border-radius: 4px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn:hover { background-color: var(--nav-bg); }
+    .windows-activate {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      padding: 15px;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+    }
+    @media (max-width: 900px) { .exam-sections { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li><a href="#"><i class="fas fa-cogs"></i> Services</a></li>
+        <li><a href="login.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Sign Out</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <div class="logo-container">
+        <img src="templogo1.jpg" alt="School Logo">
+      </div>
+      <p>2025/2026 FIRST TERM COMPUTER BASED TEST EXAMINATION</p>
+    </header>
+
+    <div class="welcome-message">
+      <div id="student-info">
+        <img id="student-image" alt="Profile Picture">
+      </div>
+      <h2 id="welcome-text"></h2>
+    </div>
+
+    <div class="exam-sections">
+      <div class="exam-section">
+        <div class="section-header">WISDOM CITY COLLEGE JUNIOR SECONDARY</div>
+        <div class="section-body">
+          <p class="instructions">JUNIOR CATEGORY</p>
+          <div class="input-group">
+            <input type="password" id="objectivesPassword" placeholder="Type the password for junior here ">
+            <button class="btn" onclick="checkObjectives()">ENTER JUNIOR EXAM PAGE</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="exam-section">
+        <div class="section-header">WISDOM CITY COLLEGE SENIOR SECONDARY</div>
+        <div class="section-body">
+          <p class="instructions">SENIOR CATEGORY</p>
+          <div class="input-group">
+            <input type="password" id="theoryPassword" placeholder="Type the password for senior here">
+            <button class="btn" onclick="checkTheory()">ENTER SENIOR EXAM PAGE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="windows-activate">
+      <p>&copy; cbt.wisdomschools.org. All rights reserved.</p>
+    </div>
+  </div>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-theme');
+    });
+
+    // Exam password check
+    function checkObjectives() {
+      const password = document.getElementById('objectivesPassword').value;
+      if (password === 'junior') {
+        window.location.href = 'index_junior.html';
+      } else {
+        alert('Invalid passcode for Junior');
+      }
+    }
+    function checkTheory() {
+      const password = document.getElementById('theoryPassword').value;
+      if (password === 'senior') {
+        window.location.href = 'index_senior.html';
+      } else {
+        alert('Invalid passcode for Senior');
+      }
+    }
+
+    // Load user from localStorage
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if (user) {
+      // If image path missing, use fallback
+      document.getElementById("student-image").src = user.image || "images/default.png";
+      document.getElementById("welcome-text").textContent = "Welcome, " + user.username + ".";
+    } else {
+      window.location.href = "login.html"; // force login if not found
+    }
+
+    // Logout clears session
+    function logout() {
+      localStorage.removeItem("currentUser");
+    }
+  </script>
+</body>
+</html>

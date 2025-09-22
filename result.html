@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Result</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: #f0f0f0;
+        padding: 50px;
+    }
+    .result-container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        display: inline-block;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    h1 { color: #4CAF50; margin-bottom: 20px; }
+    p { font-size: 18px; margin: 10px 0; }
+    button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div class="result-container">
+    <h1>Exam Result</h1>
+    <p id="welcomeUser"></p>
+    <p id="scoreText"></p>
+    <button onclick="goToLogin()">OK</button>
+</div>
+
+<script>
+    // Get user info
+    const username = localStorage.getItem('username') || 'Guest';
+    const score = localStorage.getItem('examScore') || 0;
+    const total = localStorage.getItem('examTotal') || 0;
+
+    document.getElementById('welcomeUser').textContent = `Hello, ${username}!`;
+    document.getElementById('scoreText').textContent = `You scored ${score} out of ${total}.`;
+
+    function goToLogin() {
+        // Clear exam data
+        localStorage.removeItem('userAnswers');
+        localStorage.removeItem('questions');
+        localStorage.removeItem('examScore');
+        localStorage.removeItem('examTotal');
+        window.location.href = 'login.html';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Result</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: url('watermark.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+.result-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    width: 400px;
+}
+.user-info { display: flex; align-items: center; gap: 10px; justify-content: center; margin-bottom: 20px; }
+.user-info img { width: 60px; height: 60px; border-radius: 50%; }
+.score { font-size: 24px; font-weight: bold; margin-bottom: 20px; }
+.answers { text-align: left; max-height: 300px; overflow-y: auto; margin-bottom: 20px; }
+.answers div { margin-bottom: 10px; }
+.correct { color: green; }
+.incorrect { color: red; }
+button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<div class="result-container">
+    <div class="user-info">
+        <img id="userImage" src="" alt="User Image">
+        <span id="userName">User</span>
+    </div>
+    <div class="score" id="score">Score: 0/0</div>
+    <div class="answers" id="answers"></div>
+    <button onclick="goToLogin()">OK</button>
+</div>
+
+<script>
+// Load user info
+const userName = localStorage.getItem('userName') || 'Student';
+const userImage = localStorage.getItem('userImage') || 'default-user.png';
+document.getElementById('userName').textContent = userName;
+document.getElementById('userImage').src = userImage;
+
+// Load exam results
+const userAnswers = JSON.parse(localStorage.getItem('examAnswers')) || [];
+const score = localStorage.getItem('examScore') || 0;
+const total = localStorage.getItem('examTotal') || 0;
+
+document.getElementById('score').textContent = `Score: ${score}/${total}`;
+
+// Sample questions (should match exam.html)
+const questions = [
+    {
+        "question_Text": "1. Which of the following represents the quadratic formula?",
+        "OptionA": "x = (-b + √(b²-4ac))/a",
+        "OptionB": "x = (-b ± √(b²-4ac))/(2a)",
+        "OptionC": "x = (b ± √(b²-4ac))/(2a)",
+        "OptionD": "x = (-b ± √(b²-4ac))/2",
+        "Answer": "optionB"
+    },
+    {
+        "question_Text": "2. Evaluate the limit: lim(x→0) (sin x)/x",
+        "OptionA": "0",
+        "OptionB": "1",
+        "OptionC": "Undefined",
+        "OptionD": "Infinity",
+        "Answer": "optionB"
+    },
+    {
+        "question_Text": "3. The area of a circle is given by A = π r²",
+        "OptionA": "A = πr",
+        "OptionB": "A = πr²",
+        "OptionC": "A = 2πr",
+        "OptionD": "A = πr³",
+        "Answer": "optionB"
+    }
+];
+
+// Display each answer and correctness
+const answersDiv = document.getElementById('answers');
+questions.forEach((q, idx) => {
+    const userAns = userAnswers[idx] || 'No answer';
+    const correctAns = q.Answer;
+    const div = document.createElement('div');
+    div.innerHTML = `<strong>Q${idx+1}:</strong> ${q.question_Text}<br>
+                     Your answer: <span class="${userAns === correctAns ? 'correct' : 'incorrect'}">${userAns}</span><br>
+                     Correct answer: ${correctAns}`;
+    answersDiv.appendChild(div);
+});
+
+function goToLogin() {
+    // Clear exam data
+    localStorage.removeItem('examAnswers');
+    localStorage.removeItem('examScore');
+    localStorage.removeItem('examTotal');
+    window.location.href = 'login.html';
+}
+</script>
+
+</body>
+</html>

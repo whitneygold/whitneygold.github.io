@@ -1,0 +1,25 @@
+{
+  "class": "JSS1",
+  "subject": "Mathematics",
+  "exam_type": "objectives",
+  "questions": [
+    {
+      "id": 1,
+      "questionText": "What is 2 + 2?",
+      "optionA": "2",
+      "optionB": "3",
+      "optionC": "4",
+      "optionD": "5",
+      "answer": "C"
+    },
+    {
+      "id": 2,
+      "questionText": "What is 5 x 3?",
+      "optionA": "15",
+      "optionB": "10",
+      "optionC": "8",
+      "optionD": "20",
+      "answer": "A"
+    }
+  ]
+}

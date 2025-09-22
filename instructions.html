@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="fav_icon2.ico">
+    <title>cbt.wisdomschools.org</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #student-info {
+            margin-top: 20px;
+        }
+       
+       /* body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }*/
+
+                    body {
+                position: relative;
+                z-index: 1;
+            }
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('img/templogo.jpg') no-repeat center center;
+                background-size: 300px 300px; /* adjust as needed*/ 
+                opacity: 0.1; /* watermark transparency */
+                z-index: 0;
+                pointer-events: none;
+                text-align: center 
+                padding: 0;/* allow clicks through*/
+                margin: 0;
+                padding: 0;
+                 background-color: lime;
+                align-items: center;       
+                text-align: center;
+            }
+       
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+       
+        header {
+            background-color: #008000; /* Green */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+          #student-image {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+       
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+       
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-weight: bold;
+            color: #008000;
+            border: 2px solid #d90000; /* Red */
+        }
+       
+        h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+       
+        .welcome-message {
+            background-color: #f8f8f8;
+            padding: 15px;
+            border-left: 5px solid #d90000; /* Red */
+            margin: 20px 0;
+            font-size: 16px;
+        }
+       
+        .exam-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+       
+        .section-header {
+            background-color: #008000; /* Green */
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+       
+        .section-body {
+            padding: 25px;
+        }
+       
+        .instructions {
+            margin-bottom: 20px;
+            color: #555;
+        }
+       
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+       
+        input[type="password"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+       
+        .btn {
+            background-color: #008000; /* Green */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+       
+        .btn:hover {
+            background-color: #006400; /* Darker green */
+        }
+       
+        .windows-activate {
+            text-align: center;
+            margin-top: 30px;
+            color: #888;
+            font-size: 14px;
+        }
+       
+        @media (max-width: 768px) {
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+           
+            .logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+           
+            input[type="password"] {
+                width: 90%;
+            }
+        }
+         .top-nav {
+            background-color: darkgreen;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+
+          .top-nav nav a {
+            margin: 0 10px;
+            color: white;
+            text-decoration: none;
+          }
+
+          .top-nav nav a:hover {
+            text-decoration: underline;
+          }
+
+          #themeToggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+          }
+
+          .side-nav {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 200px;
+            background-color: green;
+            height: 100%;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+          }
+
+          .side-nav a {
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-bottom: 1px solid darkgreen;
+          }
+
+          .side-nav a:hover {
+            background-color: darkgreen;
+          }
+
+          .content {
+            margin-left: 220px;
+            padding: 20px;
+          }
+
+          .footer {
+            background-color: darkgreen;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+          }
+
+          .logo-watermark {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            opacity: 0.1;
+            width: 100px;
+            height: auto;
+            z-index: 0;
+          }
+
+          .light-theme {
+            background-color: #f2f2f2;
+            color: darkgreen;
+          }
+
+          .dark-theme {
+            background-color: #1e1e1e;
+            color: #fff;
+          }
+
+          .dark-theme .top-nav,
+          .dark-theme .footer,
+          .dark-theme .side-nav {
+            background-color: #333;
+          }
+
+          .dark-theme .side-nav a {
+            color: #ccc;
+          }
+
+          .dark-theme .side-nav a:hover {
+            background-color: #555;
+          }
+
+    </style>
+</head>
+<body>
+      <header class="top-nav">
+    <img src="templogo1.jpg" alt="Logo" class="logo-watermark">
+    <nav>
+      <a href="#home_info">Home</a>
+      <a href="#about">About</a>
+      <a href="#help">Help</a>
+      <a href="#contact">Contact</a>
+      <a href="#services">Services</a>
+      <a href="logout.php"> Sign Out</a>
+    </nav>
+    <button id="themeToggle">🌙</button>
+  </header>
+
+  <!-- Side Navbar -->
+  <!--<aside class="side-nav">
+    <a href="#home_info.php">Home</a>
+    <a href="#about.php">About</a>
+    <a href="#help.php">Help</a>
+    <a href="#contact.php">Contact</a>
+    <a href="#services.php">Services</a>
+  </aside>-->
+
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo"><img src="templogo1.jpg"></div>
+               
+            </div>
+            <p style="color: red;font-size: 20px;">2025/2026 1ST TERM COMPUTER BASED TEST EXAMINATION INSTRUCTIONS TO CANDIDATES</p>
+        </header>
+       
+        <div class="welcome-message">
+      <div id="student-info">
+        <img id="student-image" alt="Profile Picture">
+      </div>
+      <h2 id="welcome-text"></h2>
+    </div>
+            <h2 style="  align-items: center; text-align: center;">Welcome, <?php echo $username; ?>.</h2>
+             <div class="container">      
+            <h1 style="color: red;"><span style="visibility: hidden;">-------------------</span>EXAMINATION INSTRUCTIONS</h1>
+
+        <div class="instructions">
+            <h2 style="color: red;"><span style="visibility: hidden;">-------------------------------</span>Rules and Regulations</h2>
+            <p>Please read the following rules carefully before proceeding:</p>
+           
+            <h3 style="color: red;"><span style="visibility: hidden;">-----------------------------------</span>General Rules</h3>
+            <ul>
+                <li>Ensure you have a stable internet connection before starting.</li>
+                <li>Complete the exam within the allocated time.</li>
+                <li>All answers will be auto-submitted when time runs out.</li>
+                <li>Only one attempt is allowed per student.</li>
+                <li>Leaving or refreshing the exam page may result in disqualification.</li>
+            </ul>
+
+            <h3 style="color: red;"><span style="visibility: hidden;">----------------------------------</span>Prohibited Actions</h3>
+            <ul>
+                <li>**No inspecting the page source or using developer tools.**</li>
+                <li>**No multiple tabs or duplicate exam pages.**</li>
+                <li>**No using external help or other devices.**</li>
+                <li>**No tab-switching, minimizing, or resizing the exam window.**</li>
+            </ul>
+
+            <h3 style="color: red;"><span style="visibility: hidden;">------------------------------------</span>Warnings & Penalties</h3>
+            <ul>
+                <li><strong>First Warning:</strong> A warning alert will be displayed.</li>
+                <li><strong>Second Violation:</strong> The exam session may be terminated.</li>
+                <li><strong>Final Penalty:</strong> Your exam submission may be voided.</li>
+            </ul>
+               
+                
+        </div>
+    </div>
+       
+       
+    </div>
+  </div>  
+           <center>
+                <div>
+                <a href="dashboard.html" class="btn">Proceed to Exam</a>
+               </div>
+           </center>
+        </div>
+         <div class="windows-activate">
+           <p> wisdom foundation schools: GateWay to the University.</p>
+        </div>
+
+     <footer class="footer">
+    <p>&copy; cbt.wisdomschools.org. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const toggle = document.getElementById('themeToggle');
+    const body = document.body;
+    toggle.onclick = () => {
+      body.classList.toggle('dark-theme');
+      body.classList.toggle('light-theme');
+      toggle.textContent = body.classList.contains('dark-theme') ? '☀️' : '🌙';
+    };
+
+     // Load user from localStorage
+    const user = JSON.parse(localStorage.getItem("currentUser"));
+    if (user) {
+      // If image path missing, use fallback
+      document.getElementById("student-image").src = user.image || "images/default.png";
+      document.getElementById("welcome-text").textContent = "Welcome, " + user.username + ".";
+    } else {
+      window.location.href = "login.html"; // force login if not found
+    }
+
+    // Logout clears session
+    function logout() {
+      localStorage.removeItem("currentUser");
+    }
+
+
+  </script>
+</body>
+</html>
