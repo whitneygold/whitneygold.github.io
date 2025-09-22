@@ -2,8 +2,9 @@
 session_start();
 
 // Paths to CSV files
-$databaseDir = __DIR__ . "/database";
-$registerFile = $databaseDir . "/register.csv";
+//$databaseDir = __DIR__ . "/database";
+//$registerFile = $databaseDir . "/register.csv";
+$registerFile = __DIR__ . "/register.csv";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user = $_POST['username'] ?? '';
