@@ -1,0 +1,461 @@
+<?php
+session_start();
+
+// Redirect to login if not logged in
+if (!isset($_SESSION['username'])) {
+    header("Location: login.html");
+    exit;
+}
+
+$username = $_SESSION['username'];
+$image = $_SESSION['image'];
+
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="icon" type="image/x-icon" href="fav_icon2.ico">
+    <title>www.petoaschools.org</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* {
+            margin: 0;
+            padding: 0;
+             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /*background: url('img/templogo.jpg') no-repeat center center;
+            //content: "";*/
+               
+                            
+        }*/
+           body {
+                position: relative;
+                z-index: 1;
+            }
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('img/templogo.jpg') no-repeat center center;
+                background-size: 300px 300px; /* adjust as needed*/ 
+                opacity: 0.1; /* watermark transparency */
+                z-index: 0;
+                pointer-events: none;
+                text-align: center 
+                padding: 0;/* allow clicks through*/
+                margin: 0;
+                padding: 0;
+                 background-color: purple;
+                align-items: center;       
+                text-align: center;
+                 box-sizing: border-box;
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+       
+       
+        :root {
+            --primary-color: #008000;
+            --secondary-color: #d90000;
+            --background-color: #f5f5f5;
+            --text-color: #333;
+            --card-bg: white;
+            --header-bg: rgb(50,125,50); /*#008000;*/
+            --header-text: white;
+            --nav-bg: #006400;
+            --input-border: #ddd;
+        }
+       
+        .dark-theme {
+            --primary-color: #4CAF50;
+            --secondary-color: #ff5252;
+            --background-color: #2c2c2c;
+            --text-color: #f0f0f0;
+            --card-bg: #3c3c3c;
+            --header-bg: #2e7d32;
+            --header-text: #f0f0f0;
+            --nav-bg: #1b5e20;
+            --input-border: #555;
+        }
+       
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+       
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+          #student-image {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+       
+        /* Navigation Bar */
+        nav {
+            background-color: var(--nav-bg);
+            padding: 15px 0;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+       
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+       
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+       
+        .nav-links li {
+            margin-right: 20px;
+        }
+       
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+       
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+       
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+       
+        header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+       
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+       
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-weight: bold;
+            color: var(--primary-color);
+            border: 2px solid var(--secondary-color);
+        }
+       
+        h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+       
+        .welcome-message {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-left: 5px solid var(--secondary-color);
+            margin: 20px 0;
+            font-size: 16px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+       
+        .exam-sections {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+       
+        .exam-section {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            overflow: hidden;
+        }
+       
+        .section-header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+       
+        .section-body {
+            padding: 25px;
+        }
+       
+        .instructions {
+            margin-bottom: 20px;
+            /*color: var(--text-color);*/
+             color: red;
+        }
+       
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+       
+        input[type="password"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 15px;
+            border: 1px solid var(--input-border);
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: center;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+       
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+       
+        .btn:hover {
+            background-color: var(--nav-bg);
+        }
+       
+        .windows-activate {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-color);
+            font-size: 14px;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+       
+        @media (max-width: 900px) {
+            .exam-sections {
+                flex-direction: column;
+            }
+           
+            .nav-container {
+                flex-direction: column;
+            }
+           
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+           
+            .nav-links li {
+                margin-bottom: 10px;
+            }
+        }
+       
+        @media (max-width: 600px) {
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+           
+            .logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+           
+            input[type="password"] {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                <li><a href="#"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#"><i class="fas fa-cogs"></i> Services</a></li>
+                  <li><a href="Logout.php"><i class="fas fa-cogs"></i> Logout</a></li>
+            </ul>
+            <div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon">🌙☀️</i>
+                </button>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <!--<div class="logo"><img id="student-image" src="img/templogo.jpg" alt="Profile Picture"></div>-->
+                <div><img src="img/templogo.jpg" alt="Profile Picture"></div>
+               
+            </div>
+            <p> TERMINAL REPORT SHEET BOARD </p>
+        </header>
+       
+        <div class="welcome-message">
+             
+        <div class="welcome-message">
+            <div id="student-info">
+            <img id="student-image" src="uploads/<?php echo $image; ?>" alt="Profile Picture">
+        </div >
+            <h2 style="  align-items: center; text-align: center;">Welcome, <?php echo $username; ?>.</h2>
+            
+        </div>
+        </div>
+       
+        <div class="exam-sections">
+            <div class="exam-section">
+                <div class="section-header">PETOA CITY COLLEGE JUNIOR SECONDARY</div>
+                <div class="section-body">
+                <p class="instructions"><span style="visibility: hidden; color: red;">----------------------------------------</span>JUNIOR CATEGORY </p>
+                   
+                 <div class="input-group">
+                        
+                         <input type="password" id="objectivesPassword" placeholder="Type the password for junior here ">
+                         <div><p>.</p></div>
+                         <button class="btn" onclick="checkObjectives()">ENTER JUNIOR REPORT PAGE</button>
+                    </div>
+                </div>
+            </div>
+           
+            <div class="exam-section">
+                <div class="section-header">PETOA CITY COLLEGE SENIOR SECONDARY □</div>
+                <div class="section-body">
+                    <p class="instructions"  color: red;><span style="visibility: hidden;">--------------------------------------</span>SENIOR CATEGORY </p>
+                   
+                    <div class="input-group">
+                        <input type="password" id="theoryPassword" placeholder="Type the password for senior here">
+                        <div><p>.</p></div>
+                        <button class="btn" onclick="checkTheory()">ENTER SENIOR REPORT PAGE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="windows-activate">
+           <p>&copy; cbt.petoaschools.org. All rights reserved.</p>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+       
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+           
+            if (document.body.classList.contains('dark-theme')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+       
+        // Simple animation for buttons
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translateY(-2px)';
+                button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+            });
+           
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0)';
+                button.style.boxShadow = 'none';
+            });
+        });
+
+        function checkObjectives() {
+            const password = document.getElementById('objectivesPassword').value;
+            if (password === 'junior') {
+                window.location.href = 'index_junior.php';
+            } else {
+                alert('Invalid passcode for junior');
+            }
+        }
+        function storeUsername() {
+            const username = document.getElementById('username').value;
+            localStorage.setItem('username', username);
+            window.location.href = "index_junior.php";
+        }
+        function storeUsername() {
+            const username = document.getElementById('username').value;
+            localStorage.setItem('username', username);
+            window.location.href = "index_senior.php";
+        }
+       
+                
+        function checkTheory() {
+            const password = document.getElementById('theoryPassword').value;
+            if (password === 'senior') {
+                window.location.href = 'index_senior.php';
+            } else {
+                alert('Invalid passcode for Senior');
+            }
+        }
+        function clearHistory() {
+            history.pushState(null, null, location.href);
+            
+                window.onpopstate = function()
+            {
+                history.go(1);
+            };
+        }
+    
+    </script>
+</body>
+</html>
