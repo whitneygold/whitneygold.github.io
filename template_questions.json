@@ -1,0 +1,62 @@
+{
+  "jss1": {
+    "mathematics": {
+      "objectives": [
+        { "question": "2 + 3 = ?", "options": {"A":"4","B":"5","C":"6","D":"7"}, "answer":"B" },
+        { "question": "5 - 2 = ?", "options": {"A":"2","B":"3","C":"4","D":"5"}, "answer":"B" }
+      ],
+      "theory": [
+        { "question": "Explain how to find the sum of two numbers.", "options": {"A":"Add them","B":"Subtract them","C":"Multiply","D":"Divide"}, "answer":"A" }
+      ]
+    },
+    "english": {
+      "objectives": [
+        { "question": "Synonym of 'happy'?", "options": {"A":"Sad","B":"Joyful","C":"Angry","D":"Tired"}, "answer":"B" },
+        { "question": "Antonym of 'cold'?", "options": {"A":"Hot","B":"Cool","C":"Warm","D":"Freezing"}, "answer":"A" }
+      ],
+      "theory": [
+        { "question": "Write a short paragraph about your favorite hobby.", "options": {"A":"Paragraph","B":"Sentence","C":"Word","D":"List"}, "answer":"A" }
+      ]
+    }
+  },
+  "jss2": {
+    "mathematics": {
+      "objectives": [
+        { "question": "10 ÷ 2 = ?", "options": {"A":"2","B":"5","C":"10","D":"12"}, "answer":"B" },
+        { "question": "7 x 3 = ?", "options": {"A":"21","B":"10","C":"24","D":"17"}, "answer":"A" }
+      ],
+      "theory": [
+        { "question": "Explain multiplication of two numbers.", "options": {"A":"Add repeatedly","B":"Subtract repeatedly","C":"Divide repeatedly","D":"None"}, "answer":"A" }
+      ]
+    },
+    "english": {
+      "objectives": [
+        { "question": "Synonym of 'angry'?", "options": {"A":"Mad","B":"Joyful","C":"Sad","D":"Tired"}, "answer":"A" },
+        { "question": "Antonym of 'bright'?", "options": {"A":"Dark","B":"Shiny","C":"Light","D":"Clear"}, "answer":"A" }
+      ],
+      "theory": [
+        { "question": "Write a short story about your school.", "options": {"A":"Paragraph","B":"Sentence","C":"Word","D":"List"}, "answer":"A" }
+      ]
+    }
+  },
+  "jss3": {
+    "mathematics": {
+      "objectives": [
+        { "question": "Square root of 49?", "options": {"A":"6","B":"7","C":"8","D":"9"}, "answer":"B" },
+        { "question": "12 ÷ 4 = ?", "options": {"A":"2","B":"3","C":"4","D":"6"}, "answer":"B" }
+      ],
+      "theory": [
+        { "question": "Explain division of numbers.", "options": {"A":"Repeated subtraction","B":"Addition","C":"Multiplication","D":"None"}, "answer":"A" }
+      ]
+    },
+    "english": {
+      "objectives": [
+        { "question": "Synonym of 'fast'?", "options": {"A":"Quick","B":"Slow","C":"Lazy","D":"Late"}, "answer":"A" },
+        { "question": "Antonym of 'happy'?", "options": {"A":"Sad","B":"Joyful","C":"Glad","D":"Excited"}, "answer":"A" }
+      ],
+      "theory": [
+        { "question": "Describe your daily routine in 5 sentences.", "options": {"A":"Paragraph","B":"Sentence","C":"Word","D":"List"}, "answer":"A" }
+      ]
+    }
+  }
+}

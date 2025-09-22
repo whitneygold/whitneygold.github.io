@@ -15,7 +15,7 @@
             min-height: 100vh;
             font-family: 'Jost', sans-serif;
             background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-            background-image: url("computerlab1.jpg");
+            background-image: url("img/computerlab1.jpg");
             background-repeat: no-repeat;
             background-size: cover;    
         }
@@ -148,63 +148,9 @@
         }
     </style>
 
-</head>
-<body>
-</head>
-
-<body oncontextmenu="return false">
-
-                                      <div class="container-xxxl  center ">
-                        <div><img src="templogo1.png"  style="margin-bottom:15px; width: 400px; height: 120px" class="mx-auto d-block "></div>
-                        <div class="" role="alert">
-                        
-                         </div>
-    <div class="main">      
-        <input type="checkbox" id="chk" aria-hidden="true">
-                        
-            <div class="signup">
-                <div>
-                   
-                </div>
-    
-             <label for="chk" aria-hidden="true"> wisdom foundation school </label>
-     <label for="chk" aria-hidden="true"> CBT PORTAL </label>
-    <input type="text" id="username" placeholder="Username" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <button onclick="login()">Login</button>
-    <p id="error" class="error"></p>
-  </div>
-
-  <script>
-    async function login() {
-      const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
-      const errorMsg = document.getElementById("error");
-
-      try {
-        // Fetch register.json
-        const response = await fetch("register.json");
-        const users = await response.json();
-
-        // Find matching user
-        const user = users.find(u => u.username === username && u.password === password);
-
-        if (user) {
-          // Save user info to localStorage
-          localStorage.setItem("currentUser", JSON.stringify(user));
-
-          // Redirect to dashboard
-          window.location.href = "Dashboard.html";
-        } else {
-          errorMsg.textContent = "Invalid username or password.";
-        }
-      } catch (err) {
-        errorMsg.textContent = "Error loading register.json";
-        console.error(err);
-      }
-    }
-
-       function validateForm() {
+<script>
+        // Validate form fields
+        function validateForm() {
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
            
@@ -222,8 +168,57 @@
         }
         return false;
     }
+    </script>
+</head>
 
-  </script>
+<body oncontextmenu="return false">
+
+                                      <div class="container-xxxl  center ">
+                        <div><img src="img\templogo1.jpg"  style="margin-bottom:15px; width: 400px; height: 120px" class="mx-auto d-block "></div>
+                        <div class="" role="alert">
+                        
+                         </div>
+    <div class="main">      
+        <input type="checkbox" id="chk" aria-hidden="true">
+                        
+            <div class="signup">
+                <div>
+                   
+                </div>
+    
+                                  
+                                          <label for="chk" aria-hidden="true"> CBT PORTAL </label>
+<input type="text" id="username" placeholder="Username"><br><br>
+<input type="password" id="password" placeholder="Password"><br><br>
+<button onclick="login()">Login</button>
+   <label for = "chk"> WISDOM CBT PORTAL </label> 
+
+                                    
+                                       
+</div>
+                        
+    </div>
+    </div>
+
+
+<script>
+async function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    const response = await fetch('register.json');
+    const users = await response.json();
+
+    const user = users.find(u => u.username === username && u.password === password);
+
+    if (user) {
+        sessionStorage.setItem('username', user.username);
+        sessionStorage.setItem('image', user.image);
+        window.location.href = 'dashboard.html';
+    } else {
+        alert("Invalid username or password");
+    }
+}
+</script>
 </body>
 </html>
-

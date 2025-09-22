@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exam Page</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 20px; }
+  .header { font-size: 1.5em; font-weight: bold; margin-bottom: 10px; }
+  .question-box { width: 85%; margin: 20px auto; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+  .options { margin-top: 15px; }
+  .option { margin-bottom: 10px; }
+  #timer { font-weight: bold; color: red; float: right; }
+  #submitBtn { margin-top: 20px; padding: 10px 20px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  Exam for: <span id="examInfo"></span>
+  <span id="timer"></span>
+</div>
+
+<div class="question-box">
+  <div id="questionText"></div>
+  <div class="options">
+    <label class="option"><input type="radio" name="option" value="A"> <span id="optA"></span></label><br>
+    <label class="option"><input type="radio" name="option" value="B"> <span id="optB"></span></label><br>
+    <label class="option"><input type="radio" name="option" value="C"> <span id="optC"></span></label><br>
+    <label class="option"><input type="radio" name="option" value="D"> <span id="optD"></span></label><br>
+  </div>
+  <button onclick="nextQuestion()">Next</button>
+</div>
+
+<button id="submitBtn" style="display:none;" onclick="showResult()">Submit Exam</button>
+
+<script>
+let questions = [];
+let currentQuestion = 0;
+let userAnswers = [];
+
+const cls = sessionStorage.getItem('class');
+const subject = sessionStorage.getItem('subject');
+const type = sessionStorage.getItem('type');
+document.getElementById('examInfo').innerHTML = `<b>${cls.toUpperCase()} - ${subject.toUpperCase()} (${type.toUpperCase()})</b>`;
+
+// Timer
+let timeLeft = 15 * 60; // 15 minutes
+const timerEl = document.getElementById('timer');
+const timerInterval = setInterval(() => {
+    let min = Math.floor(timeLeft/60);
+    let sec = timeLeft % 60;
+    timerEl.textContent = `Time: ${min}:${sec < 10 ? '0' + sec : sec}`;
+    timeLeft--;
+    if(timeLeft < 0) { clearInterval(timerInterval); showResult(); }
+}, 1000);
+
+// Load questions
+fetch('questions.json')
+.then(res => res.json())
+.then(data => {
+    if(data[cls] && data[cls][subject] && data[cls][subject][type]){
+        questions = data[cls][subject][type];
+        displayQuestion();
+    } else {
+        alert("No questions found for selected class/subject/type");
+    }
+});
+
+function displayQuestion() {
+    if(currentQuestion >= questions.length) {
+        document.querySelector('.question-box').style.display = 'none';
+        document.getElementById('submitBtn').style.display = 'inline-block';
+        return;
+    }
+    const q = questions[currentQuestion];
+    document.getElementById('questionText').innerText = q.question;
+    document.getElementById('optA').innerText = q.options.A;
+    document.getElementById('optB').innerText = q.options.B;
+    document.getElementById('optC').innerText = q.options.C;
+    document.getElementById('optD').innerText = q.options.D;
+
+    const radios = document.getElementsByName('option');
+    radios.forEach(r => r.checked = false);
+
+    if(userAnswers[currentQuestion]) {
+        document.querySelector(`input[name="option"][value="${userAnswers[currentQuestion]}"]`).checked = true;
+    }
+}
+
+function nextQuestion() {
+    const selected = document.querySelector('input[name="option"]:checked');
+    if(selected) {
+        userAnswers[currentQuestion] = selected.value;
+        currentQuestion++;
+        displayQuestion();
+    } else {
+        alert("Please select an option");
+    }
+}
+
+function showResult() {
+    clearInterval(timerInterval);
+    let score = 0;
+    questions.forEach((q,i) => {
+        if(userAnswers[i] === q.answer) score++;
+    });
+    alert(`Exam finished!\nScore: ${score} out of ${questions.length}`);
+    window.location.href = 'dashboard.html';
+}
+</script>
+</body>
+</html>

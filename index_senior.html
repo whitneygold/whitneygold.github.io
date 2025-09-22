@@ -1,0 +1,569 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="fav_icon2.ico">
+    <title>cbt.wisdomschools.org</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+       
+        :root {
+            --primary-color: #008000;
+            --secondary-color: #d90000;
+            --background-color: #f5f5f5;
+            --text-color: #333;
+            --card-bg: white;
+            --header-bg: #008000;
+            --header-text: white;
+            --nav-bg: #006400;
+            --input-border: #ddd;
+        }
+       
+        .dark-theme {
+            --primary-color: #4CAF50;
+            --secondary-color: #ff5252;
+            --background-color: #2c2c2c;
+            --text-color: #f0f0f0;
+            --card-bg: #3c3c3c;
+            --header-bg: #2e7d32;
+            --header-text: #f0f0f0;
+            --nav-bg: #1b5e20;
+            --input-border: #555;
+        }
+           /*body {
+                position: relative;
+                z-index: 1;
+            }
+        body::before {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+
+             background: url('img/templogo.jpg') no-repeat center center;
+                background-size: 300px 300px; /* adjust as needed*/ 
+                /*opacity: 0.1; /* watermark transparency */
+                /*z-index: 0;
+                pointer-events: none;
+                text-align: center 
+                padding: 0;/* allow clicks through*/
+                /*margin: 0;
+                padding: 0;
+                 background-color: lime;
+        }*/
+               body {
+                position: relative;
+                z-index: 1;
+            }
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url('img/templogo1.jpg') no-repeat center center;
+                background-size: 300px 300px; /* adjust as needed*/ 
+                opacity: 0.1; /* watermark transparency */
+                z-index: 0;
+                pointer-events: none;
+                text-align: center 
+                padding: 0;/* allow clicks through*/
+                margin: 0;
+                padding: 0;
+                 background-color: white;
+                align-items: center;       
+                text-align: center;
+            }
+       
+        .container {
+       
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+       
+        /* Navigation Bar */
+        nav {
+            background-color: var(--nav-bg);
+            padding: 15px 0;
+            margin-bottom: 25px;
+            border-radius: 8px;
+        }
+       
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+       
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+            #student-image {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+       
+        .nav-links li {
+            margin-right: 20px;
+        }
+       
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+       
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+       
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+       
+        header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 25px;
+        }
+       
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+       
+        .logo {
+            width: 80px;
+            height: 80px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-weight: bold;
+            color: var(--primary-color);
+            border: 2px solid var(--secondary-color);
+        }
+       
+        h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+       
+        .welcome-message {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-left: 5px solid var(--secondary-color);
+            margin: 20px 0;
+            font-size: 16px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+       
+        .exam-sections {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+       
+        .exam-section {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            overflow: hidden;
+        }
+       
+        .section-header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+       
+        .section-body {
+            padding: 25px;
+        }
+       
+        .instructions {
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+       
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px 0;
+        }
+       
+        input[type="password"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 12px 15px;
+            border: 1px solid var(--input-border);
+            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: center;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+        }
+       
+        .btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+       
+        .btn:hover {
+            background-color: var(--nav-bg);
+        }
+       
+        .windows-activate {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-color);
+            font-size: 14px;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+       
+        @media (max-width: 900px) {
+            .exam-sections {
+                flex-direction: column;
+            }
+           
+            .nav-container {
+                flex-direction: column;
+            }
+           
+            .nav-links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+           
+            .nav-links li {
+                margin-bottom: 10px;
+            }
+        }
+       
+        @media (max-width: 600px) {
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+            }
+           
+            .logo {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+           
+            input[type="password"] {
+                width: 90%;
+            }
+        }
+          #student-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+</head>
+    <div id="backModalOverlay" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.8); color: #fff; font-family: Arial, sans-serif; justify-content: center; align-items: center; flex-direction: column;">
+                <div id="backModal" style="background: #222; padding: 30px; border-radius: 10px; text-align: center; width: 90%; max-width: 400px;">
+                    <p style="font-size: 18px; margin: 0 0 10px;">Do you really want to go back?</p>
+
+                    <div id="passwordContainer" style="display: none;">
+                        <p style="margin-top: 10px;">Enter password to go back:</p>
+                        <input type="password" id="backPassword" placeholder="Enter password"
+                            style="padding: 10px; width: 80%; margin-top: 10px; border-radius: 5px; border: none; font-size: 16px;">
+                    </div>
+
+                    <div id="modalButtons" style="margin-top: 20px;">
+                        <button onclick="handleYes()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: limegreen; color: white; font-size: 16px; cursor: pointer;">Yes</button>
+                        <button onclick="closeBackModal()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: crimson; color: white; font-size: 16px; cursor: pointer;">No</button>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+            let backClickCount = 0;
+            let allowBack = false;
+
+            history.pushState(null, null, location.href);
+
+            window.onpopstate = function () {
+                if (!allowBack) {
+                    backClickCount++;
+
+                    if (backClickCount >= 50) {
+                        allowBack = true;
+                        alert("You have tried 50 times. Going back now...");
+                        history.back();
+                        return;
+                    }
+
+                    showBackModal();
+                }
+            };
+
+            function showBackModal() {
+                document.getElementById("backModalOverlay").style.display = "flex";
+                document.getElementById("passwordContainer").style.display = "none";
+                document.getElementById("backPassword").value = "";
+               
+                document.getElementById("modalButtons").innerHTML = `
+                    <button onclick="handleYes()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: limegreen; color: white; font-size: 16px; cursor: pointer;">Yes</button>
+                    <button onclick="closeBackModal()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: crimson; color: white; font-size: 16px; cursor: pointer;">No</button>
+                `;
+            }
+
+            function closeBackModal() {
+                document.getElementById("backModalOverlay").style.display = "none";
+                history.pushState(null, null, location.href);
+            }
+
+            function handleYes() {
+                document.getElementById("passwordContainer").style.display = "block";
+                document.getElementById("modalButtons").innerHTML = `
+                    <button onclick="checkPassword()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: limegreen; color: white; font-size: 16px; cursor: pointer;">Submit</button>
+                    <button onclick="closeBackModal()" style="padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; background: crimson; color: white; font-size: 16px; cursor: pointer;">Cancel</button>
+                `;
+            }
+
+            function checkPassword() {
+                const correctPassword = "admin";
+                const enteredPassword = document.getElementById("backPassword").value;
+
+                if (enteredPassword === correctPassword) {
+                    allowBack = true;
+                    document.getElementById("backModalOverlay").style.display = "none";
+                    history.back();
+                } else {
+                    alert("Incorrect password. Staying on this page.");
+                    closeBackModal();
+                }
+            }
+            </script>
+<body>
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+                <li><a href="logout.php"><i class="fas fa-cogs"></i> Sign Out</a></li>
+            </ul>
+            <div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon">☀️</i>
+                </button>
+            </div>
+        </div>
+    </nav>
+   
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo"> <img src="img/templogo1.jpg" alt="Profile Picture" ></div>
+               
+            </div>
+            <p>2025/2026 FIRST TERM COMPUTER BASED TEST EXAMINATION</p>
+        </header>
+       
+        <div class="welcome-message">
+              <div id="student-info">
+                 
+                  <img id="userImage" width="50"  height="50"  ><br><br>
+            </div >
+               
+                <h2>Welcome, <span id="user"></span></h2>
+        </div>
+
+
+
+               
+                  
+
+                       <div class="exam-sections">
+                            <div class="exam-section">
+                                <div class="section-header">SELECT CLASS □</div>
+                                <div class="section-body">
+                                   
+                                   <div class="form-group">
+                                                        <label>Select Class:</label>
+                                                         <select id="classSelect">
+                                                            <option value="jss1">JSS1</option>
+                                                            <option value="jss2">JSS2</option>
+                                                            <option value="jss3">JSS3</option>
+                                                        </select><br><br>
+                                                            </div>
+                                </div>
+                            </div>
+
+
+                    <div class="exam-section">
+                                <div class="section-header">SELECT SUBJECT □</div>
+                                <div class="section-body">
+                                
+                                   
+                                             <div class="form-group">
+                                                        <label>Select Subject:</label>
+                                                        <select id="subjectSelect">
+                                                            <option value="mathematics">Mathematics</option>
+                                                            <option value="english">English Language</option>
+                                                            <option value="biology">Biology</option>
+                                                        </select><br><br>
+                                                    </div>
+                                </div>
+                            </div>
+
+                        <div class="exam-section">
+                                <div class="section-header">SELECT  EXAM TYPE □</div>
+                                <div class="section-body">
+                                   
+                                             <div class="form-group"> 
+                                                        <label>Select Exam Type:</label>
+                                                         <select id="typeSelect">
+                                                            <option value="objectives">Objectives</option>
+                                                            <option value="theory">Theory</option>
+                                                        </select><br><br>
+                                                    </div>
+                                                   
+                    
+                                </div>
+                            </div>
+                        </div>
+                         <br><br>
+                 
+
+                      <div class="exam-section">
+                                <div class="section-header">ENTER PASSWORD □</div>
+                                <div class="section-body">
+                                   
+                                             <div class="form-group"> 
+                                                       
+                                                         
+                   
+                                                        <label>Enter Password:</label>
+                                                        <input type="password" id="examPassword"><br><br>
+                                                        </select><br><br>
+                                                    </div>
+                                                   
+                    
+                                </div>
+                            </div>
+                        </div>
+
+                         <div>
+                            <center>
+                                                       <button class="btn"  type="submit" onclick="startExam()">Start Exam</button>
+                                                   </div>
+                        </center>
+                                                   
+                  
+                        <div class="windows-activate">
+                           <p> &copy cbt.wisdomschools.org</p>
+                        </div>
+    </div>
+
+
+
+<script>
+document.getElementById('user').innerText = sessionStorage.getItem('username');
+document.getElementById('userImage').src = sessionStorage.getItem('image');
+
+function startExam() {
+    const cls = document.getElementById('classSelect').value;
+    const sub = document.getElementById('subjectSelect').value;
+    const type = document.getElementById('typeSelect').value;
+    const pass = document.getElementById('examPassword').value;
+
+    const correctPass = `${cls}_${sub.substring(0,4)}123`; // example: jss1_math123
+
+    if(pass.toLowerCase() === correctPass.toLowerCase()) {
+        sessionStorage.setItem('class', cls);
+        sessionStorage.setItem('subject', sub);
+        sessionStorage.setItem('type', type);
+        window.location.href = 'exams.html';
+    } else {
+        alert('Incorrect password for selected class/subject/type.');
+    }
+}
+   // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+       
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+           
+            if (document.body.classList.contains('dark-theme')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+       
+        // Simple animation for buttons
+        const buttons = document.querySelectorAll('.btn');
+        buttons.forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'translateY(-2px)';
+                button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.2)';
+            });
+           
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'translateY(0)';
+                button.style.boxShadow = 'none';
+            });
+        });
+    
+</script>
+</body>
+</html>
