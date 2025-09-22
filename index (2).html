@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="fav_icon2.ico">
-    <title>www.schools.org</title>
+    <title>cbt.wisdomschools.org</title>
     <style>
         body {
             margin: 0;
@@ -15,7 +15,7 @@
             min-height: 100vh;
             font-family: 'Jost', sans-serif;
             background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-            background-image: url("img/computerlab.jpg");
+            background-image: url("computerlab1.jpg");
             background-repeat: no-repeat;
             background-size: cover;    
         }
@@ -47,7 +47,7 @@
               transition: .5s ease-in-out;
             }
         label{
-               color: red;
+               color: lime;
                font-size: 1.5em;
                justify-content: center;
                display: flex;
@@ -148,9 +148,63 @@
         }
     </style>
 
-<script>
-        // Validate form fields
-        function validateForm() {
+</head>
+<body>
+</head>
+
+<body oncontextmenu="return false">
+
+                                      <div class="container-xxxl  center ">
+                        <div><img src="templogo1.png"  style="margin-bottom:15px; width: 400px; height: 120px" class="mx-auto d-block "></div>
+                        <div class="" role="alert">
+                        
+                         </div>
+    <div class="main">      
+        <input type="checkbox" id="chk" aria-hidden="true">
+                        
+            <div class="signup">
+                <div>
+                   
+                </div>
+    
+             <label for="chk" aria-hidden="true"> wisdom foundation school </label>
+     <label for="chk" aria-hidden="true"> CBT PORTAL </label>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+    <p id="error" class="error"></p>
+  </div>
+
+  <script>
+    async function login() {
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const errorMsg = document.getElementById("error");
+
+      try {
+        // Fetch register.json
+        const response = await fetch("register.json");
+        const users = await response.json();
+
+        // Find matching user
+        const user = users.find(u => u.username === username && u.password === password);
+
+        if (user) {
+          // Save user info to localStorage
+          localStorage.setItem("currentUser", JSON.stringify(user));
+
+          // Redirect to dashboard
+          window.location.href = "instructions.html";
+        } else {
+          errorMsg.textContent = "Invalid username or password.";
+        }
+      } catch (err) {
+        errorMsg.textContent = "Error loading register.json";
+        console.error(err);
+      }
+    }
+
+       function validateForm() {
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
            
@@ -168,38 +222,7 @@
         }
         return false;
     }
-    </script>
-</head>
 
-<body oncontextmenu="return false">
-
-                                      <div class="container-xxxl  center ">
-                        <div><img src="img\logo.jpg"  style="margin-bottom:15px; width: 400px; height: 120px" class="mx-auto d-block "></div>
-                        <div class="" role="alert">
-                        
-                         </div>
-    <div class="main">      
-        <input type="checkbox" id="chk" aria-hidden="true">
-                        
-            <div class="signup">
-                <div>
-                   
-                </div>
-    
-                                  
-                                    <form action="login.php" method="post">
-                                          <label for="chk" aria-hidden="true"> RESULT PORTAL </label>
-
-                                        <input type="text" name="username" placeholder="Enter your username" required>
-                                        <input type="password" name="password" placeholder="Enter your password" required>
-                                        <button type="submit">Login</button>
-                                         <label for = "chk">  RESULT PORTAL </label> 
-
-                                    </form>
-                                       
-</div>
-                        
-    </div>
-    </div>
+  </script>
 </body>
 </html>
